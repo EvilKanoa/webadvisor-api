@@ -1,0 +1,27 @@
+{
+  "name": "webadvisor-api",
+  "version": "0.0.1",
+  "description": "Lightweight and simple RESTful JSON API for UoG WebAdvisor",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -r dotenv/config src/server.js",
+    "prod": "NODE_ENV=production node -r dotenv/config src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvilKanoa/webadvisor-api.git"
+  },
+  "author": "Kanoa Haley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvilKanoa/webadvisor-api/issues"
+  },
+  "homepage": "https://github.com/EvilKanoa/webadvisor-api#readme",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "dotenv": "6.1.0",
+    "express": "4.16.4",
+    "lodash": "4.17.11"
+  }
+}
