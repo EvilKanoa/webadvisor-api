@@ -1,5 +1,8 @@
 const {parseCourses} = require('../parsers/courseParser');
 const constants = require('../constants');
+const {cache, putFromReq} = require('../middleware/cache');
+
+const CACHE_TIMEOUT = 60 * 5; // 5 minutes
 
 const getCookie = (res, key) => (res.headers['set-cookie'] || [])
     .find((cookie) => cookie.trim().toLowerCase().startsWith(`${key.toLowerCase()}=`))
@@ -39,7 +42,9 @@ module.exports = (app) => {
             // parse and send results
             const data = await parseCourses(html);
             data.forEach((course) => course.term = term);
-            res.write(JSON.stringify(data));
+            const json = JSON.stringify(data);
+            res.write(json);
+            putFromReq(req, json, CACHE_TIMEOUT);
         } catch (err) {
             console.error(err);
             res.write(JSON.stringify({
@@ -54,6 +59,5 @@ module.exports = (app) => {
         return next();
     };
 
-    app.get('/courses/:term', handler);
-    app.get('/courses', handler);
+    app.get('/courses/:term?', cache(CACHE_TIMEOUT), handler);
 };
