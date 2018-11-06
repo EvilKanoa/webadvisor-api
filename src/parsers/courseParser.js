@@ -1,8 +1,9 @@
 const cheerio = require('cheerio');
 
 const COURSE_TABLE_SELECTOR = '#GROUP_Grp_WSS_COURSE_SECTIONS > table > tbody';
-const COURSE_TITLE_REGEX = /^([A-Z]{3,4})\*([0-9]{4})\*([0-9]{1,4})\s+\([0-9]{1,4}\)\s+(.+)$/m;
+const COURSE_TITLE_REGEX = /^([A-Z]{2,4})\*([0-9]{1,4})\*([0-9a-zA-Z]{1,6})\s+\([0-9]{1,4}\)\s+(.+)$/m;
 const COURSE_SLOTS_REGEX = /^([0-9]+)\s*\/\s*([0-9]+)$/m;
+const COURSE_MEET_REGEX = /^[^A-Z]+([A-Z]+)\s([^0-9]+)([^-]+)\s-\s([^,]+),\s(.*)$/mi;
 const COURSE_DAY_MAP = {
     'Mon': 'monday',
     'Tues': 'tuesday',
@@ -17,13 +18,14 @@ const parseCourses = async (html) => {
     const dom = cheerio.load(html);
     const table = dom(COURSE_TABLE_SELECTOR);
     const courseMap = new Map();
-    console.log(html);
 
     table.children().each((idx, node) => {
         if (idx >= 2) {
             try {
                 insertRawCourse(courseMap, parseRawCourse(node, dom));
             } catch (err) {
+                console.error('Error while parsing course: ');
+                console.error(dom(node).html());
                 console.error(err);
             }
         }
@@ -39,26 +41,26 @@ const parseRawCourse = (node, dom) => {
     const slots = COURSE_SLOTS_REGEX.exec(text('.LIST_VAR5 > div > p').trim());
 
     const meetings = [];
-    dom('.SEC_MEETING_INFO > div', node).children('div.meet').each((idx, sec) => {
-        if (!sec.text()) return;
+    dom('.SEC_MEETING_INFO > div > p', node).text().split('\n').forEach((sec) => {
+        if (!sec || !sec.length) return;
+        sec = sec.trim();
 
-        const typeAndDays = sec.get(0).text().trim().replace(',', '').split(' ');
-        const times = sec.get(1).text().replace(/\s/, '').split('-');
-        const location = sec.get(2).text().trim();
-        const start = convert12to24(times[0]);
-        const end = convert12to24(times[1]);
+        const data = COURSE_MEET_REGEX.exec(sec);
+        if (!data || data.length !== 6) return;
 
-        for (let i = typeAndDays.length; i > 0; i--) {
-            meetings.push({
-                type: COURSE_DAY_MAP[typeAndDays[0]],
-                day: typeAndDays[i],
-                start,
-                end,
-                location,
-                building: location.split(',')[0],
-                room: location.split(' ')[2]
-            })
-        }
+        const days = data[2].split(',');
+        const type = data[1].trim();
+        const start = convert12to24(data[3].trim());
+        const end = convert12to24(data[4].trim());
+        const location = data[5].trim();
+
+        meetings.push(...days.map((badDay) => ({
+            type,
+            day: COURSE_DAY_MAP[badDay.trim()],
+            start,
+            end,
+            location
+        })));
     });
 
     return {
@@ -94,11 +96,11 @@ const insertRawCourse = (courseMap, rawCourse) => {
 };
 
 const convert12to24 = (time) => {
-    let value = time.replace(/[^0-9]*/g);
+    let value = time.replace(/[^0-9]*/g, '');
     if (time.toLowerCase().endsWith('pm') && !value.startsWith('12')) {
-        value = '' + parseInt(value, 10) + 1200;
+        value = '' + (parseInt(value, 10) + 1200);
     } else if (time.toLowerCase().endsWith('am') && value.startsWith('12')) {
-        value = '' + parseInt(value, 10) - 12;
+        value = '' + (parseInt(value, 10) - 1200);
     }
     value = value.padStart(4, '0');
 

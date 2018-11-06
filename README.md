@@ -34,9 +34,7 @@ courses = [{
             day: string,
             start: string, // (ISO 8601 extended time)
             end: string, // (ISO 8601 extended time)
-            location: string,
-            building: string,
-            room: string
+            location: string
         }]
     }]
 }];
