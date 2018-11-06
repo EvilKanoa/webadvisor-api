@@ -17,15 +17,17 @@ module.exports = (app) => {
             token = getCookie(response, 'LASTTOKEN');
 
             // send the request for the courses
+            const term = req.params.term || constants.defaultTerm;
             const form = {
-                'VAR1': req.params.term || constants.defaultTerm,
+                'VAR1': term,
                 ...constants.webadvisorCourseSearchData
             };
             const html = await req.rp.post({ url: constants.webadvisorCourseUrl + token, form });
 
             // parse and send results
             const data = await parseCourses(html);
-            res.send(data);
+            data.forEach((course) => course.term = term);
+            res.json(data);
         } catch (err) {
             console.error(err);
             res.status(500);
