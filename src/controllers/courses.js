@@ -7,6 +7,18 @@ const getCookie = (res, key) => (res.headers['set-cookie'] || [])
 
 module.exports = (app) => {
     const handler = async (req, res, next) => {
+        // use a done flag to enable the heroku timeout workaround
+        let done = false;
+        res.set('Content-Type', 'application/json');
+        res.writeHead(202);
+        const keepAlive = () => setTimeout(() => {
+            if (!done) {
+                res.write(' ');
+                keepAlive();
+            }
+        }, 15000);
+        keepAlive();
+
         try {
             // send a request to get a session token
             let response = await req.rp({ url: constants.webadvisorTokenUrl, resolveWithFullResponse: true });
@@ -27,17 +39,18 @@ module.exports = (app) => {
             // parse and send results
             const data = await parseCourses(html);
             data.forEach((course) => course.term = term);
-            res.json(data);
+            res.write(JSON.stringify(data));
         } catch (err) {
             console.error(err);
-            res.status(500);
-            res.json({
+            res.write(JSON.stringify({
                 status: 500,
                 message: 'Failed to query WebAdvisor, is it down?',
                 internalError: err
-            });
+            }));
         }
 
+        done = true;
+        res.end();
         return next();
     };
 
