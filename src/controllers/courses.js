@@ -44,7 +44,10 @@ module.exports = (app) => {
             data.forEach((course) => course.term = term);
             const json = JSON.stringify(data);
             res.write(json);
-            putFromReq(req, json, CACHE_TIMEOUT);
+
+            if (data && data.length) {
+                putFromReq(req, json, CACHE_TIMEOUT);
+            }
         } catch (err) {
             console.error(err);
             res.write(JSON.stringify({
