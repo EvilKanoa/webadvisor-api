@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+const {promisify} = require('util');
 const {parseCourses} = require('../parsers/courseParser');
 const constants = require('../constants');
 const {cache, putFromReq} = require('../middleware/cache');
@@ -7,6 +10,8 @@ const CACHE_TIMEOUT = 60 * 5; // 5 minutes
 const getCookie = (res, key) => (res.headers['set-cookie'] || [])
     .find((cookie) => cookie.trim().toLowerCase().startsWith(`${key.toLowerCase()}=`))
     .split('=', 2)[1];
+
+const getStaticPath = (term) => path.join(__dirname, 'static', 'courses', `${term.toUpperCase()}.json`);
 
 module.exports = (app) => {
     const handler = async (req, res, next) => {
@@ -42,11 +47,17 @@ module.exports = (app) => {
             // parse and send results
             const data = await parseCourses(html);
             data.forEach((course) => course.term = term);
-            const json = JSON.stringify(data);
-            res.write(json);
 
+            // use fetched data if it's available, otherwise use static data
             if (data && data.length) {
+                const json = JSON.stringify(data);
+                res.write(json);
                 putFromReq(req, json, CACHE_TIMEOUT);
+            } else if (!(await promisify(fs.access)(getStaticPath(term), fs.constants.R_OK))) {
+                console.log('Returning static files for term ' + term);
+                done = true;
+                fs.createReadStream(getStaticPath(term)).pipe(res);
+                return next();
             }
         } catch (err) {
             console.error(err);
