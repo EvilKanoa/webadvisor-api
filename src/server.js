@@ -1,14 +1,28 @@
 const express = require('express');
+const config = require('./config');
+const mongoose = require('mongoose');
 
 const bodyParser = require('body-parser');
 const rpMiddleware = require('./middleware/request-promise');
 const cors = require('cors');
 
 const courses = require('./controllers/courses');
+const welcome = require('./controllers/welcome');
 
 const app = express();
 
 process.on('unhandledRejection', (err) => console.error('Uncaught error', err));
+
+// connect to database cache
+mongoose.promise = Promise;
+mongoose.connect(config.mongodb, {
+    useNewUrlParser: true
+}).then(() => {
+    console.log(`Connected to database at ${config.mongodb}.`);
+}).catch((err) => {
+    console.error(`Error while connecting to database at ${config.mongodb}.`);
+    console.error(err);
+});
 
 // add middleware
 const corsMiddleware = cors({
@@ -21,11 +35,8 @@ app.use(rpMiddleware({ jar: true, followAllRedirects: true }));
 app.options('*', corsMiddleware);
 
 // add controllers
-app.get('/', (req, res, next) => {
-    res.send('Lightweight and simple RESTful JSON API for UoG WebAdvisor.');
-    return next();
-});
+welcome(app);
 courses(app);
 
 // all done
-app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
+app.listen(config.port, () => console.log(`Listening on port ${config.port}.`));

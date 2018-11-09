@@ -1,10 +1,14 @@
 # webadvisor-api
 
 ### Dependencies
-- NodeJS 8+
+- Node 8+
 - npm 4+
+- MongoDB Server 3.0+
+- Redis 3.2+
 
 ### Usage
+Install and configure all dependencies as specified above, then copy `.env.sample` to `.env` and ensure the configuration points to your servers. 
+
 A `nodemon` based development server can be ran using `npm run dev`.
 
 A production ready server can be started with `npm run prod`.
@@ -21,8 +25,9 @@ courses = [{
     credits: number,
     location: string,
     level: string,
-    prereqs: [courseCode: string],
-    restrictions: [courseCode: string],
+    prerequisites: string,
+    restrictions: string,
+    equates: string,
     sections: [{
         sectionId: string,
         faculty: string,
@@ -97,106 +102,6 @@ sampleCourses = [{
             "day": "wednesday",
             "start": "12:30",
             "end": "14:20",
-            "location": "THRN, Room 3401"
-        }]
-     }, {
-         "sectionId": "0103",
-         "faculty": "R. Chaturvedi",
-         "available": 1,
-         "capacity": 2,
-         "status": "Open",
-         "meetings": [{
-             "type": "LEC",
-             "day": "tuesday",
-             "start": "16:00",
-             "end": "17:20",
-             "location": "MACN, Room 113"
-         }, {
-             "type": "LEC",
-             "day": "thursday",
-             "start": "16:00",
-             "end": "17:20",
-             "location": "MACN, Room 113"
-         }, {
-            "type": "LAB",
-            "day": "thursday",
-            "start": "09:30",
-            "end": "11:20",
-            "location": "THRN, Room 3401"
-        }]
-     }, {
-         "sectionId": "0104",
-         "faculty": "R. Chaturvedi",
-         "available": 0,
-         "capacity": 2,
-         "status": "Closed",
-         "meetings": [{
-             "type": "LEC",
-             "day": "tuesday",
-             "start": "16:00",
-             "end": "17:20",
-             "location": "MACN, Room 113"
-         }, {
-             "type": "LEC",
-             "day": "thursday",
-             "start": "16:00",
-             "end": "17:20",
-             "location": "MACN, Room 113"
-         }, {
-            "type": "LAB",
-            "day": "thursday",
-            "start": "11:30",
-            "end": "13:20",
-            "location": "THRN, Room 3401"
-        }]
-     }, {
-         "sectionId": "0105",
-         "faculty": "R. Chaturvedi",
-         "available": 0,
-         "capacity": 2,
-         "status": "Closed",
-         "meetings": [{
-             "type": "LEC",
-             "day": "tuesday",
-             "start": "16:00",
-             "end": "17:20",
-             "location": "MACN, Room 113"
-         }, {
-             "type": "LEC",
-             "day": "thursday",
-             "start": "16:00",
-             "end": "17:20",
-             "location": "MACN, Room 113"
-         }, {
-            "type": "LAB",
-            "day": "monday",
-            "start": "14:30",
-            "end": "16:20",
-            "location": "THRN, Room 3401"
-        }]
-     }, {
-         "sectionId": "0106",
-         "faculty": "R. Chaturvedi",
-         "available": 2,
-         "capacity": 2,
-         "status": "Open",
-         "meetings": [{
-             "type": "LEC",
-             "day": "tuesday",
-             "start": "16:00",
-             "end": "17:20",
-             "location": "MACN, Room 113"
-         }, {
-             "type": "LEC",
-             "day": "thursday",
-             "start": "16:00",
-             "end": "17:20",
-             "location": "MACN, Room 113"
-         }, {
-            "type": "LAB",
-            "day": "tuesday",
-            "start": "11:30",
-            "end": "13:20",
             "location": "THRN, Room 3401"
         }]
      }]
