@@ -99,11 +99,13 @@ const meeting = new GraphQLObjectType({
     day: { type: weekday, description: 'The day which the meeting occurs.' },
     start: {
       type: GraphQLString,
-      description: 'The start time of the meeting, stored as an ISO 8601 extended time.',
+      description:
+        'The start time of the meeting, stored as an ISO 8601 extended time.',
     },
     end: {
       type: GraphQLString,
-      description: 'The end time of the meeting, stored as an ISO 8601 extended time.',
+      description:
+        'The end time of the meeting, stored as an ISO 8601 extended time.',
     },
     available: {
       type: GraphQLInt,
@@ -113,7 +115,10 @@ const meeting = new GraphQLObjectType({
       type: GraphQLInt,
       description: 'The total number of slots for the meeting.',
     },
-    location: { type: GraphQLString, description: 'The location of the meeting.' },
+    location: {
+      type: GraphQLString,
+      description: 'The location of the meeting.',
+    },
   },
 });
 
@@ -157,7 +162,10 @@ const course = new GraphQLObjectType({
       type: GraphQLString,
       description: 'An institution provided description for the course.',
     },
-    term: { type: term, description: 'The term which the course occurs during.' },
+    term: {
+      type: term,
+      description: 'The term which the course occurs during.',
+    },
     credits: { type: GraphQLFloat, description: 'The course weight.' },
     institution: {
       type: institution,
@@ -173,7 +181,8 @@ const course = new GraphQLObjectType({
     },
     prerequisites: {
       type: prerequisites,
-      description: 'An object representing the prerequisites required for the course.',
+      description:
+        'An object representing the prerequisites required for the course.',
     },
     sections: {
       type: GraphQLList(section),

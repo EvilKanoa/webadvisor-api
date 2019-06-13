@@ -42,7 +42,10 @@ const queryCourses = async (request, term = defaultTerm) => {
     VAR1: term,
     ...uog.webadvisorCourseSearchData,
   };
-  const html = await request.post({ url: uog.webadvisorCourseUrl + token, form });
+  const html = await request.post({
+    url: uog.webadvisorCourseUrl + token,
+    form,
+  });
 
   // parse and send results
   const data = await parseCourses(html);
@@ -74,7 +77,9 @@ const handler = async (req, res, next) => {
       const json = JSON.stringify(data);
       res.write(json);
       req.cache(json);
-    } else if (!(await promisify(fs.access)(getStaticPath(term), fs.constants.R_OK))) {
+    } else if (
+      !(await promisify(fs.access)(getStaticPath(term), fs.constants.R_OK))
+    ) {
       console.log('Returning static files for term ' + term);
       done = true;
       fs.createReadStream(getStaticPath(term)).pipe(res);
@@ -97,5 +102,8 @@ const handler = async (req, res, next) => {
 };
 
 module.exports = app => {
-  app.get('/courses/:term?', /*cache(CACHE_TIMEOUT, 'application/json'), */ handler);
+  app.get(
+    '/courses/:term?',
+    /*cache(CACHE_TIMEOUT, 'application/json'), */ handler,
+  );
 };

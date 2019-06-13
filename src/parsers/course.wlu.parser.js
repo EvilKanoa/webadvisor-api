@@ -75,8 +75,10 @@ const parseXMLCourse = xml => {
           .attr('key')
           .split('_', 2)[1]
           .slice(0, -1),
-        available: minAvailable === Number.MAX_SAFE_INTEGER ? undefined : minAvailable,
-        capacity: minCapacity === Number.MAX_SAFE_INTEGER ? undefined : minCapacity,
+        available:
+          minAvailable === Number.MAX_SAFE_INTEGER ? undefined : minAvailable,
+        capacity:
+          minCapacity === Number.MAX_SAFE_INTEGER ? undefined : minCapacity,
         meetings,
       };
     })

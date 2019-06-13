@@ -32,7 +32,10 @@ module.exports = {
       VAR1: term,
       ...uog.webadvisorCourseSearchData,
     };
-    const html = await request.post({ url: uog.webadvisorCourseUrl + token, form });
+    const html = await request.post({
+      url: uog.webadvisorCourseUrl + token,
+      form,
+    });
 
     // parse and send results
     const data = await parseCourses(html);

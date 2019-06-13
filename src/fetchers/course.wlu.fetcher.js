@@ -1,7 +1,8 @@
 const { parseXMLCourse } = require('../parsers/course.wlu.parser');
 const { wlu } = require('../constants');
 
-const toWLUTerm = term => `20${term.slice(1)}${wlu.seasons[term.slice(0, 1)] || '01'}`;
+const toWLUTerm = term =>
+  `20${term.slice(1)}${wlu.seasons[term.slice(0, 1)] || '01'}`;
 
 // This is simply black magic.
 // Original Source (https://scheduleme.wlu.ca/):

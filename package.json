@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/EvilKanoa/webadvisor-api#readme",
   "prettier": {
-    "printWidth": 90,
+    "printWidth": 80,
     "tabWidth": 2,
     "semi": true,
     "singleQuote": true,
