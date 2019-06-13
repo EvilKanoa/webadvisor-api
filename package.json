@@ -1,12 +1,13 @@
 {
   "name": "webadvisor-api",
   "version": "0.0.1",
-  "description": "Lightweight and simple RESTful JSON API for UoG WebAdvisor",
+  "description": "Lightweight and simple GraphQL API for UoG, UW, and WLU.",
   "main": "src/server.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon -r dotenv/config src/server.js",
     "prod": "NODE_ENV=production node -r dotenv/config src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "jest --passWithNoTests",
+    "testing": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,18 @@
     "url": "https://github.com/EvilKanoa/webadvisor-api/issues"
   },
   "homepage": "https://github.com/EvilKanoa/webadvisor-api#readme",
+  "prettier": {
+    "printWidth": 90,
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "quoteProps": "consistent",
+    "trailingComma": "all",
+    "arrowParens": "avoid"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {
     "body-parser": "1.18.3",
     "cheerio": "1.0.0-rc.2",
@@ -28,5 +41,10 @@
     "redis": "2.8.0",
     "request": "2.88.0",
     "request-promise-native": "1.0.5"
+  },
+  "devDependencies": {
+    "jest": "24.8.0",
+    "prettier": "1.18.2",
+    "supertest": "4.0.2"
   }
 }

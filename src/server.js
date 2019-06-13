@@ -11,23 +11,26 @@ const welcome = require('./controllers/welcome');
 
 const app = express();
 
-process.on('unhandledRejection', (err) => console.error('Uncaught error', err));
+process.on('unhandledRejection', err => console.error('Uncaught error', err));
 
 // connect to database cache
 mongoose.promise = Promise;
-mongoose.connect(config.mongodb, {
-    useNewUrlParser: true
-}).then(() => {
+mongoose
+  .connect(config.mongodb, {
+    useNewUrlParser: true,
+  })
+  .then(() => {
     console.log(`Connected to database at ${config.mongodb}.`);
-}).catch((err) => {
+  })
+  .catch(err => {
     console.error(`Error while connecting to database at ${config.mongodb}.`);
     console.error(err);
-});
+  });
 
 // add middleware
 const corsMiddleware = cors({
-    origin: true,
-    credentials: true
+  origin: true,
+  credentials: true,
 });
 app.use(corsMiddleware);
 app.use(bodyParser.json());

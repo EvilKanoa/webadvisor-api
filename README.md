@@ -1,17 +1,17 @@
 # webadvisor-api
 
 ### Dependencies
-- Node 8+
-- npm 4+
+- Node 10+
+- yarn
 - MongoDB Server 3.0+
 - Redis 3.2+
 
 ### Usage
 Install and configure all dependencies as specified above, then copy `.env.sample` to `.env` and ensure the configuration points to your servers. 
 
-A `nodemon` based development server can be ran using `npm run dev`.
+A `nodemon` based development server can be ran using `yarn dev`.
 
-A production ready server can be started with `npm run prod`.
+A production ready server can be started with `yarn prod`.
 
 Course structure
 ----------------
