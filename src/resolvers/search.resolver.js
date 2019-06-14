@@ -1,7 +1,7 @@
 const { env } = require('../config');
 
 const institutions = {
-  UOG: () => {},
+  UOG: require('../fetchers/search.uog.fetcher'),
   UW: () => {},
   WLU: require('../fetchers/search.wlu.fetcher'),
 };
@@ -15,8 +15,10 @@ module.exports = async (
   try {
     const resolver = institutions[institution];
     const results =
-      resolver && (await resolver(query, term, skip, limit, context));
-    return { results, query, term, institution, skip, limit };
+      query.length > 0 &&
+      resolver &&
+      (await resolver(query, term, skip, limit, context));
+    return { results: results || [], query, term, institution, skip, limit };
   } catch (e) {
     if (env !== 'production') {
       console.error(e);

@@ -1,5 +1,5 @@
 const { parseXMLCourse } = require('../parsers/course.wlu.parser');
-const { toWLUTerm, computeWLUTimestamp } = require('../utils/wluFetchUtils');
+const { toWLUTerm, computeWLUTimestamp } = require('../utils/fetchUtils.wlu');
 const { wlu } = require('../constants');
 
 module.exports = async (code, term, { rp: request }) => {

@@ -1,14 +1,10 @@
 const { parseXMLSearch } = require('../parsers/search.wlu.parser');
-const { toWLUTerm } = require('../utils/wluFetchUtils');
+const { toWLUTerm } = require('../utils/fetchUtils.wlu');
 const { wlu } = require('../constants');
 
 const PAGE_COUNT = 7;
 
 module.exports = async (query, term, skip = 0, limit = 0, { rp: request }) => {
-  if (query.length <= 0) {
-    return [];
-  }
-
   const makeRequest = page =>
     request({
       uri: wlu.schedulemeSearchUrl,
@@ -34,7 +30,9 @@ module.exports = async (query, term, skip = 0, limit = 0, { rp: request }) => {
   );
 
   results = results.slice(pull);
-  return limit > 0 && results.length > limit
-    ? results.slice(0, limit - results.length)
-    : results;
+  if (limit > 0 && results.length > limit) {
+    results = results.slice(0, limit - results.length);
+  }
+
+  return results.map(code => ({ code }));
 };

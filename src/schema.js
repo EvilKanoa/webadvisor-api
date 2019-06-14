@@ -9,6 +9,8 @@ const {
   GraphQLFloat,
 } = require('graphql');
 
+const nonNullListOf = type => GraphQLNonNull(GraphQLList(GraphQLNonNull(type)));
+
 const courseCode = GraphQLString;
 
 const institution = new GraphQLEnumType({
@@ -194,6 +196,22 @@ const course = new GraphQLObjectType({
   },
 });
 
+const searchResult = new GraphQLObjectType({
+  name: 'Result',
+  description: 'An entity matched during a search.',
+  fields: {
+    code: {
+      type: GraphQLNonNull(courseCode),
+      description: 'The code of a matching entity.',
+    },
+    course: {
+      type: course,
+      description: 'Optional course data to be injected for the result.',
+      resolve: require('./resolvers/result.resolver'),
+    },
+  },
+});
+
 const search = new GraphQLObjectType({
   name: 'Search',
   description: 'A search for course codes.',
@@ -211,8 +229,8 @@ const search = new GraphQLObjectType({
       description: 'The institution to search within.',
     },
     results: {
-      type: GraphQLNonNull(GraphQLList(courseCode)),
-      description: 'The list of resulting course codes.',
+      type: nonNullListOf(searchResult),
+      description: 'The list of resulting courses.',
     },
     skip: {
       type: GraphQLInt,
