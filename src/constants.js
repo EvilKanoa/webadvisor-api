@@ -56,5 +56,4 @@ module.exports = {
     schedulemeSearchUrl: 'https://scheduleme.wlu.ca/vsb/add_suggest.jsp',
     seasons: { W: '01', S: '05', F: '09' },
   },
-  defaultTerm: 'W19',
 };

@@ -43,7 +43,9 @@ const parseRawCourse = (node, dom) => {
   const title = COURSE_TITLE_REGEX.exec(
     text('.SEC_SHORT_TITLE > div > a').trim(),
   );
-  const slots = COURSE_SLOTS_REGEX.exec(text('.LIST_VAR5 > div > p').trim());
+  const slots = COURSE_SLOTS_REGEX.exec(
+    text('.LIST_VAR5 > div > p').trim(),
+  ) || ['0', '0'];
 
   const meetings = [];
   dom('.SEC_MEETING_INFO > div > p', node)

@@ -3,11 +3,6 @@ const path = require('path');
 const { promisify } = require('util');
 const { parseCourses } = require('../parsers/course.uog.parser');
 const { uog, defaultTerm } = require('../constants');
-//const { cache } = require('../middleware/cache');
-
-const CACHE_TIMEOUT = 60 * 5; // 1 minute
-const DATA_TIMEOUT = 60 * 60;
-const DATA_TIME_KEY = '__internal__course_refresh_time';
 
 const getCookie = (res, key) =>
   (res.headers['set-cookie'] || [])
@@ -69,14 +64,13 @@ const handler = async (req, res, next) => {
   keepAlive();
 
   try {
-    const term = req.params.term || defaultTerm;
+    const term = req.params.term.toUpperCase();
     const data = await queryCourses(req.rp, term);
 
     // use fetched data if it's available, otherwise use static data
     if (data && data.length) {
       const json = JSON.stringify(data);
       res.write(json);
-      req.cache(json);
     } else if (
       !(await promisify(fs.access)(getStaticPath(term), fs.constants.R_OK))
     ) {
@@ -102,8 +96,5 @@ const handler = async (req, res, next) => {
 };
 
 module.exports = app => {
-  app.get(
-    '/courses/:term?',
-    /*cache(CACHE_TIMEOUT, 'application/json'), */ handler,
-  );
+  app.get('/courses/:term', handler);
 };
