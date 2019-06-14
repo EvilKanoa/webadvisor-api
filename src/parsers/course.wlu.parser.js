@@ -14,7 +14,7 @@ const parseXMLCourse = xml => {
   const dom = cheerio.load(xml, { xmlMode: true });
   const data = dom('addcourse > classdata > course');
 
-  let credits;
+  let credits = undefined;
   const location = dom('addcourse > classdata > campus')
     .map((i, el) => cheerio(el).attr('v'))
     .get()
@@ -94,6 +94,4 @@ const parseXMLCourse = xml => {
   };
 };
 
-module.exports = {
-  parseXMLCourse,
-};
+module.exports = { parseXMLCourse };

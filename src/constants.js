@@ -48,6 +48,7 @@ module.exports = {
       'VAR9': '',
       'SUBMIT_OPTIONS': '',
     },
+    descriptionUrl: 'https://www.uoguelph.ca/registrar/calendars/undergraduate/current/c12/c12{CODE}.shtml',
   },
   wlu: {
     schedulemeCourseUrl: `https://scheduleme.wlu.ca/vsb/getclassdata.jsp`,

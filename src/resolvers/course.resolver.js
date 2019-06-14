@@ -1,8 +1,8 @@
 const { env } = require('../config');
 
 const institutions = {
-  UOG: code => {},
-  UW: code => {},
+  UOG: require('../fetchers/course.uog.fetcher').single,
+  UW: () => {},
   WLU: require('../fetchers/course.wlu.fetcher').single,
 };
 

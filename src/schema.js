@@ -161,6 +161,7 @@ const course = new GraphQLObjectType({
     description: {
       type: GraphQLString,
       description: 'An institution provided description for the course.',
+      resolve: require('./resolvers/description.resolver'),
     },
     term: {
       type: term,

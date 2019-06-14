@@ -80,7 +80,7 @@ const parseRawCourse = (node, dom) => {
     location: text('.SEC_LOCATION > div > p'),
     level: text('.SEC_ACAD_LEVEL > div > p'),
     section: {
-      sectionId: title[3],
+      id: title[3],
       faculty: text('.SEC_FACULTY_INFO > div > p'),
       available: parseInt(slots[1], 10),
       capacity: parseInt(slots[2], 10),
@@ -117,6 +117,4 @@ const convert12to24 = time => {
   return `${value.slice(0, 2)}:${value.slice(2, 4)}`;
 };
 
-module.exports = {
-  parseCourses,
-};
+module.exports = { parseCourses };
