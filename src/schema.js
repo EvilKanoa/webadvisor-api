@@ -9,6 +9,8 @@ const {
   GraphQLFloat,
 } = require('graphql');
 
+const courseCode = GraphQLString;
+
 const institution = new GraphQLEnumType({
   name: 'School',
   description: 'One of the institutions available to query.',
@@ -154,7 +156,7 @@ const course = new GraphQLObjectType({
   description: 'A course which includes all metadata and sections.',
   fields: {
     code: {
-      type: GraphQLString,
+      type: courseCode,
       description: 'The course code, sometimes considered a course ID.',
     },
     name: { type: GraphQLString, description: 'The name of the course.' },
@@ -192,6 +194,37 @@ const course = new GraphQLObjectType({
   },
 });
 
+const search = new GraphQLObjectType({
+  name: 'Search',
+  description: 'A search for course codes.',
+  fields: {
+    query: {
+      type: GraphQLNonNull(GraphQLString),
+      description: 'The search term used to determine the search results.',
+    },
+    term: {
+      type: GraphQLNonNull(term),
+      description: 'The term to search within.',
+    },
+    institution: {
+      type: GraphQLNonNull(institution),
+      description: 'The institution to search within.',
+    },
+    results: {
+      type: GraphQLNonNull(GraphQLList(courseCode)),
+      description: 'The list of resulting course codes.',
+    },
+    skip: {
+      type: GraphQLInt,
+      description: 'Number of results skipped from beginning of results.',
+    },
+    limit: {
+      type: GraphQLInt,
+      description: 'Maximum number of results returned.',
+    },
+  },
+});
+
 const query = new GraphQLObjectType({
   name: 'Query',
   description:
@@ -199,6 +232,7 @@ const query = new GraphQLObjectType({
   fields: {
     course: {
       type: course,
+      resolve: require('./resolvers/course.resolver'),
       args: {
         code: {
           type: GraphQLNonNull(GraphQLString),
@@ -213,7 +247,34 @@ const query = new GraphQLObjectType({
           description: 'The term that the course occurs during.',
         },
       },
-      resolve: require('./resolvers/course.resolver'),
+    },
+    search: {
+      type: search,
+      resolve: require('./resolvers/search.resolver'),
+      args: {
+        query: {
+          type: GraphQLNonNull(GraphQLString),
+          description: 'The search term used to determine the search results.',
+        },
+        term: {
+          type: GraphQLNonNull(term),
+          description: 'The term to search within.',
+        },
+        institution: {
+          type: GraphQLNonNull(institution),
+          description: 'The institution to search within.',
+        },
+        skip: {
+          type: GraphQLInt,
+          description:
+            'Number of results to skip before returning, used for pagination in conjuction with limit.',
+        },
+        limit: {
+          type: GraphQLInt,
+          description:
+            'Number of results to return before cutting off, used for pagination in conjuction with skip.',
+        },
+      },
     },
   },
 });

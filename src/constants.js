@@ -48,10 +48,12 @@ module.exports = {
       'VAR9': '',
       'SUBMIT_OPTIONS': '',
     },
-    descriptionUrl: 'https://www.uoguelph.ca/registrar/calendars/undergraduate/current/c12/c12{CODE}.shtml',
+    descriptionUrl:
+      'https://www.uoguelph.ca/registrar/calendars/undergraduate/current/c12/c12{CODE}.shtml',
   },
   wlu: {
-    schedulemeCourseUrl: `https://scheduleme.wlu.ca/vsb/getclassdata.jsp`,
+    schedulemeCourseUrl: 'https://scheduleme.wlu.ca/vsb/getclassdata.jsp',
+    schedulemeSearchUrl: 'https://scheduleme.wlu.ca/vsb/add_suggest.jsp',
     seasons: { W: '01', S: '05', F: '09' },
   },
   defaultTerm: 'W19',

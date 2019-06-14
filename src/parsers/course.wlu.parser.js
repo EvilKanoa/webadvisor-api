@@ -14,6 +14,10 @@ const parseXMLCourse = xml => {
   const dom = cheerio.load(xml, { xmlMode: true });
   const data = dom('addcourse > classdata > course');
 
+  if (!data.length) {
+    return false;
+  }
+
   let credits = undefined;
   const location = dom('addcourse > classdata > campus')
     .map((i, el) => cheerio(el).attr('v'))
