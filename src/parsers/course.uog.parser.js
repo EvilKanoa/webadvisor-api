@@ -40,8 +40,12 @@ const parseRawCourse = (node, dom) => {
       .text()
       .trim();
 
-  const title = COURSE_TITLE_REGEX.exec(text('.SEC_SHORT_TITLE > div > a').trim());
-  const slots = COURSE_SLOTS_REGEX.exec(text('.LIST_VAR5 > div > p').trim());
+  const title = COURSE_TITLE_REGEX.exec(
+    text('.SEC_SHORT_TITLE > div > a').trim(),
+  );
+  const slots = COURSE_SLOTS_REGEX.exec(
+    text('.LIST_VAR5 > div > p').trim(),
+  ) || ['0', '0'];
 
   const meetings = [];
   dom('.SEC_MEETING_INFO > div > p', node)
@@ -78,7 +82,7 @@ const parseRawCourse = (node, dom) => {
     location: text('.SEC_LOCATION > div > p'),
     level: text('.SEC_ACAD_LEVEL > div > p'),
     section: {
-      sectionId: title[3],
+      id: title[3],
       faculty: text('.SEC_FACULTY_INFO > div > p'),
       available: parseInt(slots[1], 10),
       capacity: parseInt(slots[2], 10),
@@ -115,6 +119,4 @@ const convert12to24 = time => {
   return `${value.slice(0, 2)}:${value.slice(2, 4)}`;
 };
 
-module.exports = {
-  parseCourses,
-};
+module.exports = { parseCourses };
