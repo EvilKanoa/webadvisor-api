@@ -1,18 +1,8 @@
 const { parseCourses } = require('../parsers/course.uog.parser');
 const { sendRequest } = require('../utils/fetchUtils.uog');
 
-const loadAllCourses = async (term, { rp: request }) => {
-  const html = await sendRequest(request, { VAR1: term });
-
-  // parse and send results
-  const data = await parseCourses(html);
-  data.forEach(course => (course.term = term));
-
-  return data;
-};
-
 module.exports = async (code, term, { rp: request }) => {
-  // get the course department an number separate to query webadvisor
+  // get the course department and number separate to query webadvisor
   const [var1, var3] = code.split(/\*/);
   const html = await sendRequest(request, {
     'VAR1': term,

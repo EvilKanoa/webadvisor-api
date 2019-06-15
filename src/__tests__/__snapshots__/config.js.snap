@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Configuration controls uses fallbacks when process.env values are not set 1`] = `"{\\"env\\":\\"production\\",\\"port\\":3001}"`;
+
+exports[`Configuration controls uses the process.env values if set 1`] = `"{\\"env\\":\\"test_env\\",\\"port\\":1337}"`;

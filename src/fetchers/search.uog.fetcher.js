@@ -27,7 +27,7 @@ module.exports = async (query, term, skip = 0, limit = 0, { rp: request }) => {
           }),
         )),
         ...(await parseCourses(
-          sendRequest(request, { 'VAR1': term, 'LIST.VAR3_1': query }),
+          await sendRequest(request, { 'VAR1': term, 'LIST.VAR3_1': query }),
         )),
       );
     }

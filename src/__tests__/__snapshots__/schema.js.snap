@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GraphQL schema matches the schema snapshot 1`] = `
+"\\"\\"\\"A course which includes all metadata and sections.\\"\\"\\"
+type Course {
+  \\"\\"\\"The course code, sometimes considered a course ID.\\"\\"\\"
+  code: String
+
+  \\"\\"\\"The name of the course.\\"\\"\\"
+  name: String
+
+  \\"\\"\\"An institution provided description for the course.\\"\\"\\"
+  description: String
+
+  \\"\\"\\"The term which the course occurs during.\\"\\"\\"
+  term: Term
+
+  \\"\\"\\"The course weight.\\"\\"\\"
+  credits: Float
+
+  \\"\\"\\"The institution which is offering the course.\\"\\"\\"
+  institution: School
+
+  \\"\\"\\"The institution defined location of the course.\\"\\"\\"
+  location: String
+
+  \\"\\"\\"The institution defined academic level of the course.\\"\\"\\"
+  level: String
+
+  \\"\\"\\"An object representing the prerequisites required for the course.\\"\\"\\"
+  prerequisites: Prerequisites
+
+  \\"\\"\\"All sections offered for this course.\\"\\"\\"
+  sections: [Section]
+}
+
+\\"\\"\\"One of the seven days in a week.\\"\\"\\"
+enum Day {
+  \\"\\"\\"Monday\\"\\"\\"
+  monday
+
+  \\"\\"\\"Tuesday\\"\\"\\"
+  tuesday
+
+  \\"\\"\\"Wednesday\\"\\"\\"
+  wednesday
+
+  \\"\\"\\"Thursday\\"\\"\\"
+  thursday
+
+  \\"\\"\\"Friday\\"\\"\\"
+  friday
+
+  \\"\\"\\"Saturday\\"\\"\\"
+  saturday
+
+  \\"\\"\\"Sunday\\"\\"\\"
+  sunday
+}
+
+\\"\\"\\"
+A recurring meeting for a given course section including where and when it takes place.
+\\"\\"\\"
+type Meeting {
+  \\"\\"\\"The type of the meeting, or none if type is not known.\\"\\"\\"
+  type: Meeting_Type
+
+  \\"\\"\\"The name of the meeting if one is given.\\"\\"\\"
+  name: String
+
+  \\"\\"\\"The day which the meeting occurs.\\"\\"\\"
+  day: Day
+
+  \\"\\"\\"The start time of the meeting, stored as an ISO 8601 extended time.\\"\\"\\"
+  start: String
+
+  \\"\\"\\"The end time of the meeting, stored as an ISO 8601 extended time.\\"\\"\\"
+  end: String
+
+  \\"\\"\\"The number of available/free slots for the meeting.\\"\\"\\"
+  available: Int
+
+  \\"\\"\\"The total number of slots for the meeting.\\"\\"\\"
+  capacity: Int
+
+  \\"\\"\\"The location of the meeting.\\"\\"\\"
+  location: String
+}
+
+\\"\\"\\"The type of a meeting.\\"\\"\\"
+enum Meeting_Type {
+  \\"\\"\\"Lecture\\"\\"\\"
+  LEC
+
+  \\"\\"\\"Lab\\"\\"\\"
+  LAB
+
+  \\"\\"\\"Seminar\\"\\"\\"
+  SEM
+}
+
+\\"\\"\\"
+A set of required courses which has the ability to represent a union of courses,
+an intersection of courses, or a single course.
+\\"\\"\\"
+type Prerequisites {
+  \\"\\"\\"A single course prerequisite.\\"\\"\\"
+  only: String
+
+  \\"\\"\\"One of the items in this list is required as a prereq.\\"\\"\\"
+  any: [Prerequisites]
+
+  \\"\\"\\"Every item in this list is required as a prereq.\\"\\"\\"
+  all: [Prerequisites]
+}
+
+\\"\\"\\"
+The base level query object used to access any and all API information. Have fun!
+\\"\\"\\"
+type Query {
+  course(
+    \\"\\"\\"The institution defined course code.\\"\\"\\"
+    code: String!
+
+    \\"\\"\\"The instiution that offers the course.\\"\\"\\"
+    institution: School!
+
+    \\"\\"\\"The term that the course occurs during.\\"\\"\\"
+    term: Term!
+  ): Course
+  search(
+    \\"\\"\\"The search term used to determine the search results.\\"\\"\\"
+    query: String!
+
+    \\"\\"\\"The term to search within.\\"\\"\\"
+    term: Term!
+
+    \\"\\"\\"The institution to search within.\\"\\"\\"
+    institution: School!
+
+    \\"\\"\\"
+    Number of results to skip before returning, used for pagination in conjuction with limit.
+    \\"\\"\\"
+    skip: Int
+
+    \\"\\"\\"
+    Number of results to return before cutting off, used for pagination in conjuction with skip.
+    \\"\\"\\"
+    limit: Int
+  ): Search
+}
+
+\\"\\"\\"An entity matched during a search.\\"\\"\\"
+type Result {
+  \\"\\"\\"The code of a matching entity.\\"\\"\\"
+  code: String!
+
+  \\"\\"\\"Optional course data to be injected for the result.\\"\\"\\"
+  course: Course
+}
+
+\\"\\"\\"One of the institutions available to query.\\"\\"\\"
+enum School {
+  \\"\\"\\"University of Guelph\\"\\"\\"
+  UOG
+
+  \\"\\"\\"University of Waterloo\\"\\"\\"
+  UW
+
+  \\"\\"\\"Wilfrid Laurier University\\"\\"\\"
+  WLU
+}
+
+\\"\\"\\"A search for course codes.\\"\\"\\"
+type Search {
+  \\"\\"\\"The search term used to determine the search results.\\"\\"\\"
+  query: String!
+
+  \\"\\"\\"The term to search within.\\"\\"\\"
+  term: Term!
+
+  \\"\\"\\"The institution to search within.\\"\\"\\"
+  institution: School!
+
+  \\"\\"\\"The list of resulting courses.\\"\\"\\"
+  results: [Result!]!
+
+  \\"\\"\\"Number of results skipped from beginning of results.\\"\\"\\"
+  skip: Int
+
+  \\"\\"\\"Maximum number of results returned.\\"\\"\\"
+  limit: Int
+}
+
+\\"\\"\\"A course section which defines registration and meetings.\\"\\"\\"
+type Section {
+  \\"\\"\\"The identifying string for the section, may not exist.\\"\\"\\"
+  id: String
+
+  \\"\\"\\"The faculty in charge of the section.\\"\\"\\"
+  faculty: String
+
+  \\"\\"\\"The number of available/free slots for the section.\\"\\"\\"
+  available: Int
+
+  \\"\\"\\"The total number of slots for the section.\\"\\"\\"
+  capacity: Int
+
+  \\"\\"\\"The meetings required for the section.\\"\\"\\"
+  meetings: [Meeting]
+}
+
+\\"\\"\\"
+A school term, includes the term season which is summer, fall, or winter, as well as the year.
+\\"\\"\\"
+enum Term {
+  W19
+  S19
+  F19
+  W20
+  S20
+  F20
+  W21
+  S21
+  F21
+  W22
+  S22
+  F22
+}
+"
+`;
