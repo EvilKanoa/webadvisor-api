@@ -34,7 +34,33 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "coverageDirectory": "./coverage/"
+    "coverageDirectory": "./coverage/",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ],
+    "reporters": [
+      "default",
+      [
+        "jest-ratchet",
+        {
+          "tolerance": 1,
+          "roundDown": false,
+          "timeout": 10000
+        }
+      ]
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 4,
+        "functions": 2,
+        "lines": 2,
+        "statements": 1
+      }
+    }
   },
   "dependencies": {
     "body-parser": "1.18.3",
@@ -49,6 +75,7 @@
   },
   "devDependencies": {
     "jest": "24.8.0",
+    "jest-ratchet": "2.0.3",
     "nodemon": "1.19.1",
     "prettier": "1.18.2",
     "supertest": "4.0.2"
