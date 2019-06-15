@@ -2,7 +2,9 @@ const { wlu } = require('../constants');
 
 module.exports = {
   toWLUTerm: term =>
-    `20${term.slice(1)}${wlu.seasons[term.slice(0, 1)] || '01'}`,
+    term && term.match(/^[WFSwfs][0-9]{2}$/im)
+      ? `20${term.slice(1)}${wlu.seasons[term.slice(0, 1).toUpperCase()]}`
+      : '201901',
 
   computeWLUTimestamp: (date = new Date()) => {
     // This is simply black magic.

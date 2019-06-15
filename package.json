@@ -7,10 +7,10 @@
     "dev": "NODE_ENV=development nodemon -r dotenv/config src/server.js",
     "run": "yarn dev",
     "prod": "NODE_ENV=production node -r dotenv/config src/server.js",
-    "test": "jest --watch",
+    "test": "jest --watch --color --reporters=\"default\"",
     "prettier": "prettier --write \"src/**/*.js\"",
     "prettier-check": "prettier --check \"src/**/*.js\"",
-    "ci-test": "jest --passWithNoTests --coverage",
+    "ci-test": "jest --passWithNoTests --coverage --ci",
     "qa": "yarn prettier-check && yarn ci-test"
   },
   "repository": {
@@ -34,7 +34,32 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "coverageDirectory": "./coverage/"
+    "coverageDirectory": "./coverage/",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "json-summary",
+      "text"
+    ],
+    "reporters": [
+      "default",
+      [
+        "jest-ratchet",
+        {
+          "tolerance": 1
+        }
+      ]
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 35,
+        "functions": 27,
+        "lines": 42,
+        "statements": 41
+      }
+    }
   },
   "dependencies": {
     "body-parser": "1.18.3",
@@ -49,6 +74,7 @@
   },
   "devDependencies": {
     "jest": "24.8.0",
+    "jest-ratchet": "2.0.3",
     "nodemon": "1.19.1",
     "prettier": "1.18.2",
     "supertest": "4.0.2"
