@@ -1,14 +1,14 @@
 const { uog } = require('../constants');
 
-const getCookie = (res, key) =>
-  (res.headers['set-cookie'] || [])
-    .find(cookie =>
-      cookie
-        .trim()
-        .toLowerCase()
-        .startsWith(`${key.toLowerCase()}=`),
-    )
-    .split('=', 2)[1];
+const getCookie = (res, key) => {
+  const cookie = ((res && res.headers['set-cookie']) || []).find(cookie =>
+    cookie
+      .trim()
+      .toLowerCase()
+      .startsWith(`${key.toLowerCase()}=`),
+  );
+  return cookie && cookie.split('=', 2)[1];
+};
 
 const sendRequest = async (request, formData = {}, postOpts = {}) => {
   // send a request to get a session token
@@ -36,4 +36,4 @@ const sendRequest = async (request, formData = {}, postOpts = {}) => {
   });
 };
 
-module.exports = { sendRequest };
+module.exports = { sendRequest, getCookie };

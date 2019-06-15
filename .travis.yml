@@ -1,4 +1,10 @@
 language: node_js
 node_js:
-  - 10
-
+  - "10"
+install:
+  - yarn install --production=false
+  - yarn global add codecov
+script:
+  - yarn qa
+after_script:
+  - codecov

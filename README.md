@@ -1,4 +1,4 @@
-# webadvisor-api [![Build status](https://img.shields.io/travis/com/EvilKanoa/webadvisor-api.svg)](https://travis-ci.com/EvilKanoa/webadvisor-api) ![License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/EvilKanoa/webadvisor-api.svg)
+# webadvisor-api [![Build status](https://img.shields.io/travis/com/EvilKanoa/webadvisor-api.svg?style=flat-square&logo=travis)](https://travis-ci.com/EvilKanoa/webadvisor-api) [![coverage](https://codecov.io/gh/EvilKanoa/webadvisor-api/branch/master/graph/badge.svg)](https://codecov.io/gh/EvilKanoa/webadvisor-api) ![License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square) ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/EvilKanoa/webadvisor-api.svg?style=flat-square)
 
 ### Developing
 Ensure you're running on a supported NodeJS version (10 or newer) and have `yarn` installed.
@@ -8,7 +8,7 @@ Afterwards run `yarn` to install dependencies.
 To run a development server simply run `yarn dev` and a `nodemon` based dev server will start.
 This server is ran in watch mode so any changes you make will cause it to refresh instantly.
 
-To test your code run `yarn testing`.
+To test your code run `yarn test`.
 This will launch jest in watch mode so any changes to your code or tests will cause the tests to be re-ran.
 
 ### Deploying

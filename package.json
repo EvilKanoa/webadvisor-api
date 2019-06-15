@@ -5,9 +5,13 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon -r dotenv/config src/server.js",
+    "run": "yarn dev",
     "prod": "NODE_ENV=production node -r dotenv/config src/server.js",
-    "test": "jest --passWithNoTests",
-    "testing": "jest --watch"
+    "test": "jest --watch",
+    "prettier": "prettier --write \"src/**/*.js\"",
+    "prettier-check": "prettier --check \"src/**/*.js\"",
+    "ci-test": "jest --passWithNoTests --coverage",
+    "qa": "yarn prettier-check && yarn ci-test"
   },
   "repository": {
     "type": "git",
@@ -29,7 +33,8 @@
     "arrowParens": "avoid"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage/"
   },
   "dependencies": {
     "body-parser": "1.18.3",
