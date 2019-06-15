@@ -1,4 +1,4 @@
-# webadvisor-api [![Build status](https://img.shields.io/travis/com/EvilKanoa/webadvisor-api.svg?style=flat-square&logo=travis)](https://travis-ci.com/EvilKanoa/webadvisor-api) [![coverage](https://codecov.io/gh/EvilKanoa/webadvisor-api/branch/master/graph/badge.svg)](https://codecov.io/gh/EvilKanoa/webadvisor-api) ![License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square) ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/EvilKanoa/webadvisor-api.svg?style=flat-square)
+# webadvisor-api [![Build status](https://img.shields.io/travis/com/EvilKanoa/webadvisor-api.svg?style=flat-square&logo=travis)](https://travis-ci.com/EvilKanoa/webadvisor-api) [![coverage](https://img.shields.io/codecov/c/github/EvilKanoa/webadvisor-api.svg?logo=codecov&style=flat-square)](https://codecov.io/gh/EvilKanoa/webadvisor-api) ![License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square) ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/EvilKanoa/webadvisor-api.svg?style=flat-square)
 
 ### Developing
 Ensure you're running on a supported NodeJS version (10 or newer) and have `yarn` installed.
