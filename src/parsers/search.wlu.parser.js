@@ -3,6 +3,10 @@ const cheerio = require('cheerio');
 const CODE_DASH_REGEX = /[^a-z0-9]+/gi;
 
 const parseXMLSearch = xml => {
+  if (!xml || !xml.length) {
+    return false;
+  }
+
   const dom = cheerio.load(xml, { xmlMode: true });
   const count = parseInt(dom('add_suggest').text(), 10);
 

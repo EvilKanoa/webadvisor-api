@@ -2,52 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const { promisify } = require('util');
 const { parseCourses } = require('../parsers/course.uog.parser');
-const { uog, defaultTerm } = require('../constants');
-
-const getCookie = (res, key) =>
-  (res.headers['set-cookie'] || [])
-    .find(cookie =>
-      cookie
-        .trim()
-        .toLowerCase()
-        .startsWith(`${key.toLowerCase()}=`),
-    )
-    .split('=', 2)[1];
+const { sendRequest } = require('../utils/fetchUtils.uog');
 
 const getStaticPath = term =>
   path.join(__dirname, 'static', 'courses', `${term.toUpperCase()}.json`);
-
-const queryCourses = async (request, term = defaultTerm) => {
-  // send a request to get a session token
-  let response = await request({
-    url: uog.webadvisorTokenUrl,
-    resolveWithFullResponse: true,
-  });
-  let token = getCookie(response, 'LASTTOKEN');
-
-  // send another request with the token to set required cookies
-  response = await request({
-    url: uog.webadvisorTokenUrl + token,
-    resolveWithFullResponse: true,
-  });
-  token = getCookie(response, 'LASTTOKEN');
-
-  // send the request for the courses
-  const form = {
-    VAR1: term,
-    ...uog.webadvisorCourseSearchData,
-  };
-  const html = await request.post({
-    url: uog.webadvisorCourseUrl + token,
-    form,
-  });
-
-  // parse and send results
-  const data = await parseCourses(html);
-  data.forEach(course => (course.term = term));
-
-  return data;
-};
 
 const handler = async (req, res, next) => {
   // use a done flag to enable the heroku timeout workaround
@@ -65,7 +23,8 @@ const handler = async (req, res, next) => {
 
   try {
     const term = req.params.term.toUpperCase();
-    const data = await queryCourses(req.rp, term);
+    const data = await parseCourses(await sendRequest(req.rp, { VAR1: term }));
+    data.forEach(course => (course.term = term));
 
     // use fetched data if it's available, otherwise use static data
     if (data && data.length) {

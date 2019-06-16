@@ -15,6 +15,10 @@ const COURSE_DAY_MAP = {
 };
 
 const parseCourses = async html => {
+  if (!html || !html.length) {
+    return [];
+  }
+
   const dom = cheerio.load(html);
   const table = dom(COURSE_TABLE_SELECTOR);
   const courseMap = new Map();
@@ -23,11 +27,7 @@ const parseCourses = async html => {
     if (idx >= 2) {
       try {
         insertRawCourse(courseMap, parseRawCourse(node, dom));
-      } catch (err) {
-        console.error('Error while parsing course: ');
-        console.error(dom(node).html());
-        console.error(err);
-      }
+      } catch (err) {}
     }
   });
 
@@ -43,9 +43,10 @@ const parseRawCourse = (node, dom) => {
   const title = COURSE_TITLE_REGEX.exec(
     text('.SEC_SHORT_TITLE > div > a').trim(),
   );
-  const slots = COURSE_SLOTS_REGEX.exec(
-    text('.LIST_VAR5 > div > p').trim(),
-  ) || ['0', '0'];
+  let slots = COURSE_SLOTS_REGEX.exec(text('.LIST_VAR5 > div > p').trim());
+  if (!slots || slots.length !== 3) {
+    slots = [null, '0', '0'];
+  }
 
   const meetings = [];
   dom('.SEC_MEETING_INFO > div > p', node)
@@ -93,8 +94,6 @@ const parseRawCourse = (node, dom) => {
 };
 
 const insertRawCourse = (courseMap, rawCourse) => {
-  if (!rawCourse) return;
-
   if (courseMap.has(rawCourse.code)) {
     courseMap.get(rawCourse.code).sections.push(rawCourse.section);
   } else {

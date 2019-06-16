@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<add_suggest>
+    7
+    <results courses="3282">
+
+
+        <rs id="1" info="Info Processing With Micros" reqId="" reason="CODE" >CP 102</rs>
+
+        <rs id="2" info="Intro To Programming" reqId="" reason="CODE" >CP 104</rs>
+
+        <rs id="3" info="Data Structures I" reqId="" reason="CODE" >CP 164</rs>
+
+        <rs id="4" info="Web Site Design" reqId="" reason="CODE" >CP 202</rs>
+
+        <rs id="5" info="Windows App. Programming" reqId="" reason="CODE" >CP 212</rs>
+
+        <rs id="6" info="Object-Oriented Programming" reqId="" reason="CODE" >CP 213</rs>
+
+        <rs id="7" info="Digital Electronics" reqId="" reason="CODE" >CP 220</rs>
+
+
+
+
+
+        <rs id="8" info="" reqId="">_more_</rs>
+
+    </results>
+</add_suggest>

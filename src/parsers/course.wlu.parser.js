@@ -11,6 +11,10 @@ const COURSE_DAY_MAP = {
 };
 
 const parseXMLCourse = xml => {
+  if (!xml || !xml.length) {
+    return false;
+  }
+
   const dom = cheerio.load(xml, { xmlMode: true });
   const data = dom('addcourse > classdata > course');
 
@@ -49,30 +53,32 @@ const parseXMLCourse = xml => {
         };
       });
 
-      const meetings = dom('> selection > block', data).map((i, el) => {
-        const data = cheerio(el);
+      const meetings = dom('> selection > block', data)
+        .map((i, el) => {
+          const data = cheerio(el);
 
-        const type = data.attr('type').toUpperCase();
-        const name = data.attr('disp');
-        const available = parseInt(data.attr('os'), 10);
-        const capacity = parseInt(data.attr('me'), 10);
-        const location = data.attr('location');
+          const type = data.attr('type').toUpperCase();
+          const name = data.attr('disp');
+          const available = parseInt(data.attr('os'), 10);
+          const capacity = parseInt(data.attr('me'), 10);
+          const location = data.attr('location');
 
-        minAvailable = available < minAvailable ? available : minAvailable;
-        minCapacity = capacity < minCapacity ? capacity : minCapacity;
+          minAvailable = available < minAvailable ? available : minAvailable;
+          minCapacity = capacity < minCapacity ? capacity : minCapacity;
 
-        return data
-          .attr('timeblockids')
-          .split(',')
-          .map(id => ({
-            type,
-            name,
-            available,
-            capacity,
-            location,
-            ...blocks[id],
-          }));
-      });
+          return data
+            .attr('timeblockids')
+            .split(',')
+            .map(id => ({
+              type,
+              name,
+              available,
+              capacity,
+              location,
+              ...blocks[id],
+            }));
+        })
+        .get();
 
       return {
         id: data

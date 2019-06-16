@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+
+
+<addcourse>
+<errors>
+
+</errors>
+<classdata date="1560705226357">
+ <campus n="W" v="Waterloo"/>
+ <term n="201909" v="Fall 2019"/>
+ <session n="" v=""/>
+ <course key="CP-386" code="CP" number="386" title="Operating Systems" cores="" desc="Topics include operating system services, file systems, CPU scheduling, memory management, virtual memory, disk scheduling, deadlocks, concurrent processes, protection and distributed systems.&lt;br&gt;&lt;br&gt;&lt;font color=&quot;crimson&quot;&gt;Prerequisites:&lt;/font&gt; CP216 and CP264 (or CP217)." snote="" enr="" waiting="0" cart="" dsel="" faculty="SC">
+  <uselection key="--201909_933--" courseKey="CP-386" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="163187210,279580932,351933770,279580932">
+   <selection key="--201909_933--" cmkey="CP-386" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="933" cartid="933" secNo="A" status="A" u="false" os="200" me="200" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="200" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Zima, Evgueni" location="BA101" campus="W" psl="null" timeblockids="1,2" loos=""/>
+   </selection>
+   <timeblock id="1" day="2" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="2" day="4" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <offering key="CP-386" cid="" ac="null" ag="" ao="" oattrs="{}" rg="" ti="" eq="" clcn=""/>
+ </course>
+ <cids>{}</cids>
+</classdata>
+
+</addcourse>

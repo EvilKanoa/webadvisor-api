@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UOG Course Description Parser fails gracefully when course not found 1`] = `"''"`;
+
+exports[`UOG Course Description Parser parses a description correctly 1`] = `"'This course introduces techniques and tools used in the development of large software systems. Students learn methods for organizing and constructing modular systems, manipulating files, introductory interface design, and use of databases. Software tools for managing projects, database connectivity, configuration management, and system application programmer interfaces are also covered. '"`;
