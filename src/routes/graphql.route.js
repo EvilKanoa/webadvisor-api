@@ -7,4 +7,6 @@ const config = {
   pretty: true,
 };
 
-module.exports = app => app.use('/graphql', graphql(config));
+module.exports = app => {
+  app.use('/graphql', graphql(config));
+};
