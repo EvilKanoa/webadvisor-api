@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+
+
+<addcourse>
+<errors>
+
+</errors>
+<classdata date="1560705226150">
+ <campus n="W" v="Waterloo"/>
+ <campus n="C" v="Brantford"/>
+ <term n="201909" v="Fall 2019"/>
+ <session n="" v=""/>
+ <course key="CP-104" code="CP" number="104" title="Intro To Programming" cores="" desc="An introductory course designed to familiarize the student with modern software developmenttechniques. Emphasis is on problem-solving and structured program design methodologies.Programming projects are implemented in a widely used high-level language.&lt;br&gt;&lt;font color=&quot;crimson&quot;&gt;Registration Notes: &lt;/font&gt; Must register for both a lecture and a lab." snote="" enr="" waiting="0" cart="" dsel="" faculty="SC">
+  <uselection key="--201909_28-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,151390610,279580932">
+   <selection key="--201909_28-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="1,2,3" loos=""/>
+    <block type="Lab" key="28" cartid="28" secNo="L1" status="A" u="false" os="0" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L1" usn="" ot="c" nres="0" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="4" loos=""/>
+   </selection>
+   <timeblock id="1" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="2" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="3" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="4" day="2" t1="870" t2="1010" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2382-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,440408780,279580932">
+   <selection key="--201909_2382-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="5,6,7" loos=""/>
+    <block type="Lab" key="2382" cartid="2382" secNo="L10" status="A" u="false" os="19" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L10" usn="" ot="c" nres="19" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="8" loos=""/>
+   </selection>
+   <timeblock id="5" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="6" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="7" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="8" day="5" t1="960" t2="1100" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2521-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,505290410,279580932">
+   <selection key="--201909_2521-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="9,10,11" loos=""/>
+    <block type="Lab" key="2521" cartid="2521" secNo="L11" status="A" u="false" os="38" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L11" usn="" ot="c" nres="38" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="12" loos=""/>
+   </selection>
+   <timeblock id="9" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="10" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="11" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="12" day="6" t1="510" t2="650" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2522-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,519053180,279580932">
+   <selection key="--201909_2522-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="13,14,15" loos=""/>
+    <block type="Lab" key="2522" cartid="2522" secNo="L12" status="A" u="false" os="40" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L12" usn="" ot="c" nres="40" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="16" loos=""/>
+   </selection>
+   <timeblock id="13" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="14" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="15" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="16" day="6" t1="720" t2="860" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_3688-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,161221160,279580932">
+   <selection key="--201909_3688-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="17,18,19" loos=""/>
+    <block type="Lab" key="3688" cartid="3688" secNo="L13" status="A" u="false" os="30" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L13" usn="" ot="c" nres="30" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="20" loos=""/>
+   </selection>
+   <timeblock id="17" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="18" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="19" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="20" day="2" t1="1020" t2="1160" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_3728-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,263458880,279580932">
+   <selection key="--201909_3728-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="21,22,23" loos=""/>
+    <block type="Lab" key="3728" cartid="3728" secNo="L14" status="A" u="false" os="7" me="30" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L14" usn="" ot="c" nres="7" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="N1055" campus="W" psl="null" timeblockids="24" loos=""/>
+   </selection>
+   <timeblock id="21" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="22" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="23" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="24" day="3" t1="1140" t2="1280" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_30-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,239865560,279580932">
+   <selection key="--201909_30-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="25,26,27" loos=""/>
+    <block type="Lab" key="30" cartid="30" secNo="L2" status="A" u="false" os="0" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L2" usn="" ot="c" nres="0" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="28" loos=""/>
+   </selection>
+   <timeblock id="25" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="26" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="27" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="28" day="3" t1="780" t2="920" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_31-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,249696110,279580932">
+   <selection key="--201909_31-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="29,30,31" loos=""/>
+    <block type="Lab" key="31" cartid="31" secNo="L3" status="A" u="false" os="41" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L3" usn="" ot="c" nres="41" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="32" loos=""/>
+   </selection>
+   <timeblock id="29" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="30" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="31" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="32" day="3" t1="930" t2="1070" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_32-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,332272730,279580932">
+   <selection key="--201909_32-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="33,34,35" loos=""/>
+    <block type="Lab" key="32" cartid="32" secNo="L4" status="A" u="false" os="51" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L4" usn="" ot="c" nres="51" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="36" loos=""/>
+   </selection>
+   <timeblock id="33" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="34" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="35" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="36" day="4" t1="750" t2="890" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_389-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,342103280,279580932">
+   <selection key="--201909_389-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="37,38,39" loos=""/>
+    <block type="Lab" key="389" cartid="389" secNo="L5" status="A" u="false" os="0" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L5" usn="" ot="c" nres="0" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="40" loos=""/>
+   </selection>
+   <timeblock id="37" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="38" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="39" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="40" day="4" t1="900" t2="1040" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_390-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,351933830,279580932">
+   <selection key="--201909_390-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="41,42,43" loos=""/>
+    <block type="Lab" key="390" cartid="390" secNo="L6" status="A" u="false" os="39" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L6" usn="" ot="c" nres="39" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="44" loos=""/>
+   </selection>
+   <timeblock id="41" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="42" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="43" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="44" day="4" t1="1050" t2="1190" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_1530-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,410917130,279580932">
+   <selection key="--201909_1530-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="45,46,47" loos=""/>
+    <block type="Lab" key="1530" cartid="1530" secNo="L7" status="A" u="false" os="42" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L7" usn="" ot="c" nres="42" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="48" loos=""/>
+   </selection>
+   <timeblock id="45" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="46" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="47" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="48" day="5" t1="510" t2="650" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_1655-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,420747680,279580932">
+   <selection key="--201909_1655-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+   </selection>
+   <timeblock id="49" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="50" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="51" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="52" day="5" t1="660" t2="800" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2381-60-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="147458300,279580932,336204860,279580932,524951420,279580932,430578230,279580932">
+   <selection key="--201909_2381-60-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="60" cartid="60" secNo="A" status="A" u="false" os="166" me="375" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec A" usn="" ot="c" nres="166" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="BA201" campus="W" psl="null" timeblockids="53,54,55" loos=""/>
+    <block type="Lab" key="2381" cartid="2381" secNo="L9" status="A" u="false" os="14" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L9" usn="" ot="c" nres="14" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="56" loos=""/>
+   </selection>
+   <timeblock id="53" day="2" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="54" day="4" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="55" day="6" t1="810" t2="860" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="56" day="5" t1="810" t2="950" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2435-28-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,151390610,279580932">
+   <selection key="--201909_2435-28-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="57,58" loos=""/>
+    <block type="Lab" key="28" cartid="28" secNo="L1" status="A" u="false" os="0" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L1" usn="" ot="c" nres="0" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="59" loos=""/>
+   </selection>
+   <timeblock id="57" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="58" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="59" day="2" t1="870" t2="1010" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2382-2435-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,440408780,279580932">
+   <selection key="--201909_2382-2435-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="60,61" loos=""/>
+    <block type="Lab" key="2382" cartid="2382" secNo="L10" status="A" u="false" os="19" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L10" usn="" ot="c" nres="19" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="62" loos=""/>
+   </selection>
+   <timeblock id="60" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="61" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="62" day="5" t1="960" t2="1100" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2435-2521-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,505290410,279580932">
+   <selection key="--201909_2435-2521-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="63,64" loos=""/>
+    <block type="Lab" key="2521" cartid="2521" secNo="L11" status="A" u="false" os="38" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L11" usn="" ot="c" nres="38" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="65" loos=""/>
+   </selection>
+   <timeblock id="63" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="64" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="65" day="6" t1="510" t2="650" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2435-2522-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,519053180,279580932">
+   <selection key="--201909_2435-2522-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="66,67" loos=""/>
+    <block type="Lab" key="2522" cartid="2522" secNo="L12" status="A" u="false" os="40" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L12" usn="" ot="c" nres="40" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="68" loos=""/>
+   </selection>
+   <timeblock id="66" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="67" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="68" day="6" t1="720" t2="860" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2435-3688-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,161221160,279580932">
+   <selection key="--201909_2435-3688-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="69,70" loos=""/>
+    <block type="Lab" key="3688" cartid="3688" secNo="L13" status="A" u="false" os="30" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L13" usn="" ot="c" nres="30" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="71" loos=""/>
+   </selection>
+   <timeblock id="69" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="70" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="71" day="2" t1="1020" t2="1160" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2435-3728-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,263458880,279580932">
+   <selection key="--201909_2435-3728-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="72,73" loos=""/>
+    <block type="Lab" key="3728" cartid="3728" secNo="L14" status="A" u="false" os="7" me="30" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L14" usn="" ot="c" nres="7" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="N1055" campus="W" psl="null" timeblockids="74" loos=""/>
+   </selection>
+   <timeblock id="72" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="73" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="74" day="3" t1="1140" t2="1280" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2435-30-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,239865560,279580932">
+   <selection key="--201909_2435-30-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="75,76" loos=""/>
+    <block type="Lab" key="30" cartid="30" secNo="L2" status="A" u="false" os="0" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L2" usn="" ot="c" nres="0" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="77" loos=""/>
+   </selection>
+   <timeblock id="75" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="76" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="77" day="3" t1="780" t2="920" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2435-31-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,249696110,279580932">
+   <selection key="--201909_2435-31-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="78,79" loos=""/>
+    <block type="Lab" key="31" cartid="31" secNo="L3" status="A" u="false" os="41" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L3" usn="" ot="c" nres="41" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="80" loos=""/>
+   </selection>
+   <timeblock id="78" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="79" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="80" day="3" t1="930" t2="1070" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2435-32-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,332272730,279580932">
+   <selection key="--201909_2435-32-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="81,82" loos=""/>
+    <block type="Lab" key="32" cartid="32" secNo="L4" status="A" u="false" os="51" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L4" usn="" ot="c" nres="51" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="83" loos=""/>
+   </selection>
+   <timeblock id="81" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="82" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="83" day="4" t1="750" t2="890" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2435-389-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,342103280,279580932">
+   <selection key="--201909_2435-389-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="84,85" loos=""/>
+    <block type="Lab" key="389" cartid="389" secNo="L5" status="A" u="false" os="0" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L5" usn="" ot="c" nres="0" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="86" loos=""/>
+   </selection>
+   <timeblock id="84" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="85" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="86" day="4" t1="900" t2="1040" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2435-390-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,351933830,279580932">
+   <selection key="--201909_2435-390-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="87,88" loos=""/>
+    <block type="Lab" key="390" cartid="390" secNo="L6" status="A" u="false" os="39" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L6" usn="" ot="c" nres="39" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="89" loos=""/>
+   </selection>
+   <timeblock id="87" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="88" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="89" day="4" t1="1050" t2="1190" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_1530-2435-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,410917130,279580932">
+   <selection key="--201909_1530-2435-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="90,91" loos=""/>
+    <block type="Lab" key="1530" cartid="1530" secNo="L7" status="A" u="false" os="42" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L7" usn="" ot="c" nres="42" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="92" loos=""/>
+   </selection>
+   <timeblock id="90" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="91" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="92" day="5" t1="510" t2="650" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_1655-2435-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,420747680,279580932">
+   <selection key="--201909_1655-2435-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="93,94" loos=""/>
+    <block type="Lab" key="1655" cartid="1655" secNo="L8" status="A" u="false" os="41" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L8" usn="" ot="c" nres="41" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="95" loos=""/>
+   </selection>
+   <timeblock id="93" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="94" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="95" day="5" t1="660" t2="800" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2381-2435-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="257560490,279580932,446307050,279580932,430578230,279580932">
+   <selection key="--201909_2381-2435-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2435" cartid="2435" secNo="B" status="A" u="false" os="195" me="330" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec B" usn="" ot="c" nres="195" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="Bedawi, Safaa" location="LH1001" campus="W" psl="null" timeblockids="96,97" loos=""/>
+    <block type="Lab" key="2381" cartid="2381" secNo="L9" status="A" u="false" os="14" me="52" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab L9" usn="" ot="c" nres="14" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="BA113" campus="W" psl="null" timeblockids="98" loos=""/>
+   </selection>
+   <timeblock id="96" day="3" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="97" day="5" t1="1050" t2="1130" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="98" day="5" t1="810" t2="950" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <uselection key="--201909_2935-2936-" courseKey="CP-104" d1="4266" d2="4356" de="70128" ss="" mp="false" bs="263458910,279580932,452205440,279580932">
+   <selection key="--201909_2935-2936-" cmkey="CP-104" thc="" co="" inst="" ac="" ssid="201909" credits="0.5" creditsMax="0.5">
+    <block type="Lec" key="2935" cartid="2935" secNo="BR" status="A" u="false" os="24" me="32" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lec BR" usn="" ot="c" nres="24" recl="0" recul="0" credits="0.5" creditsMax="0.5" rg="" ac="" pn="1" im="M001" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="GRH106" campus="C" psl="null" timeblockids="99" loos=""/>
+    <block type="Lab" key="2936" cartid="2936" secNo="1A" status="A" u="false" os="24" me="32" ws="0" wc="0" c="false" hue="0" n="" fd="" disp="Lab 1A" usn="" ot="c" nres="24" recl="0" recul="0" credits="0.0" creditsMax="0.0" rg="" ac="" pn="1" im="M002" attrs="{&quot;s_cores&quot;:[&quot;&quot;]}" teacher="" location="GRH106" campus="C" psl="null" timeblockids="100" loos=""/>
+   </selection>
+   <timeblock id="99" day="3" t1="1140" t2="1310" d1="4266" d2="4356" xm="0"/>
+   <timeblock id="100" day="5" t1="1140" t2="1280" d1="4266" d2="4356" xm="0"/>
+  </uselection>
+  <offering key="CP-104" cid="" ac="null" ag="" ao="" oattrs="{}" rg="" ti="" eq="" clcn=""/>
+ </course>
+ <cids>{}</cids>
+</classdata>
+
+</addcourse>

@@ -54,23 +54,23 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 35,
-        "functions": 27,
-        "lines": 42,
-        "statements": 41
+        "branches": 78,
+        "functions": 58,
+        "lines": 72,
+        "statements": 70
       }
     }
   },
   "dependencies": {
-    "body-parser": "1.18.3",
-    "cheerio": "1.0.0-rc.2",
+    "body-parser": "1.19.0",
+    "cheerio": "1.0.0-rc.3",
     "cors": "2.8.5",
-    "dotenv": "6.1.0",
-    "express": "4.16.4",
+    "dotenv": "8.0.0",
+    "express": "4.17.1",
     "express-graphql": "0.8.0",
     "graphql": "14.3.1",
     "request": "2.88.0",
-    "request-promise-native": "1.0.5"
+    "request-promise-native": "1.0.7"
   },
   "devDependencies": {
     "jest": "24.8.0",
