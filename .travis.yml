@@ -8,3 +8,6 @@ script:
   - yarn qa
 after_script:
   - codecov
+branches:
+  only:
+    - master
