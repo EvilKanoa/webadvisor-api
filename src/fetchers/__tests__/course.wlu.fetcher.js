@@ -59,10 +59,10 @@ describe('WLU Course Fetcher', () => {
 
   it('returns the parsed course', async () => {
     const mockCourse = { code, name: 'mocked' };
-    parseXMLCourse.mockResolvedValue(mockCourse);
+    parseXMLCourse.mockReturnValue(mockCourse);
     const result = await fetcher(code, term, req);
 
     expect(result).toBeDefined();
-    expect(result).toBe(mockCourse);
+    expect(result).toEqual({ ...mockCourse, code, term, institution: 'WLU' });
   });
 });

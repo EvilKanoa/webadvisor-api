@@ -4,7 +4,7 @@ exports[`GraphQL schema matches the schema snapshot 1`] = `
 "\\"\\"\\"A course which includes all metadata and sections.\\"\\"\\"
 type Course {
   \\"\\"\\"The course code, sometimes considered a course ID.\\"\\"\\"
-  code: String
+  code: String!
 
   \\"\\"\\"The name of the course.\\"\\"\\"
   name: String
@@ -13,13 +13,13 @@ type Course {
   description: String
 
   \\"\\"\\"The term which the course occurs during.\\"\\"\\"
-  term: Term
+  term: Term!
 
   \\"\\"\\"The course weight.\\"\\"\\"
   credits: Float
 
   \\"\\"\\"The institution which is offering the course.\\"\\"\\"
-  institution: School
+  institution: School!
 
   \\"\\"\\"The institution defined location of the course.\\"\\"\\"
   location: String
@@ -207,7 +207,7 @@ type Section {
   capacity: Int
 
   \\"\\"\\"The meetings required for the section.\\"\\"\\"
-  meetings: [Meeting]
+  meetings: [Meeting!]
 }
 
 \\"\\"\\"

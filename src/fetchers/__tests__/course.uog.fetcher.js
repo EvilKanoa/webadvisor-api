@@ -47,6 +47,6 @@ describe('UOG Course Fetcher', () => {
     const result = await fetcher(code, term, req);
 
     expect(result).toBeDefined();
-    expect(result).toBe(mockCourse);
+    expect(result).toEqual({ ...mockCourse, term, institution: 'UOG' });
   });
 });

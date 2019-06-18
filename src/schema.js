@@ -147,7 +147,7 @@ const section = new GraphQLObjectType({
       description: 'The total number of slots for the section.',
     },
     meetings: {
-      type: GraphQLList(meeting),
+      type: GraphQLList(GraphQLNonNull(meeting)),
       description: 'The meetings required for the section.',
     },
   },
@@ -158,7 +158,7 @@ const course = new GraphQLObjectType({
   description: 'A course which includes all metadata and sections.',
   fields: {
     code: {
-      type: courseCode,
+      type: GraphQLNonNull(courseCode),
       description: 'The course code, sometimes considered a course ID.',
     },
     name: { type: GraphQLString, description: 'The name of the course.' },
@@ -168,12 +168,12 @@ const course = new GraphQLObjectType({
       resolve: require('./resolvers/description.resolver'),
     },
     term: {
-      type: term,
+      type: GraphQLNonNull(term),
       description: 'The term which the course occurs during.',
     },
     credits: { type: GraphQLFloat, description: 'The course weight.' },
     institution: {
-      type: institution,
+      type: GraphQLNonNull(institution),
       description: 'The institution which is offering the course.',
     },
     location: {

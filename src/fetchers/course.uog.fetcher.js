@@ -10,7 +10,9 @@ module.exports = async (code, term, { rp: request }) => {
     'LIST.VAR3_1': var3,
   });
 
-  const data = await parseCourses(html);
+  const course = (await parseCourses(html)).find(
+    course => course.code.toLowerCase() === code.toLowerCase(),
+  );
 
-  return data.find(course => course.code.toLowerCase() === code.toLowerCase());
+  return course && { ...course, term, institution: 'UOG' };
 };
