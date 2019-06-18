@@ -11,7 +11,7 @@ describe('UOG Search Fetcher', () => {
   const queryString = 'a query string';
   const term = 'F19';
   const req = { rp: jest.fn() };
-  const mockCourse = { code: queryCode, term };
+  const mockCourse = { code: queryCode, term, institution: 'UOG' };
 
   beforeEach(() => {
     parseCourses.mockReset();
@@ -56,15 +56,15 @@ describe('UOG Search Fetcher', () => {
     expect(result).toHaveLength(3);
     expect(result).toContainEqual({
       code: 'VAR1,VAR3',
-      course: { code: 'VAR1,VAR3' },
+      course: { code: 'VAR1,VAR3', term, institution: 'UOG' },
     });
     expect(result).toContainEqual({
       code: 'VAR1,LIST.VAR1_1',
-      course: { code: 'VAR1,LIST.VAR1_1' },
+      course: { code: 'VAR1,LIST.VAR1_1', term, institution: 'UOG' },
     });
     expect(result).toContainEqual({
       code: 'VAR1,LIST.VAR3_1',
-      course: { code: 'VAR1,LIST.VAR3_1' },
+      course: { code: 'VAR1,LIST.VAR3_1', term, institution: 'UOG' },
     });
   });
 
@@ -91,11 +91,15 @@ describe('UOG Search Fetcher', () => {
     expect(result).toHaveLength(2);
     expect(result).toContainEqual({
       code: 'VAR1,VAR3',
-      course: { code: 'VAR1,VAR3' },
+      course: { code: 'VAR1,VAR3', term, institution: 'UOG' },
     });
     expect(result).toContainEqual({
       code: 'VAR1,LIST.VAR1_1,LIST.VAR3_1',
-      course: { code: 'VAR1,LIST.VAR1_1,LIST.VAR3_1' },
+      course: {
+        code: 'VAR1,LIST.VAR1_1,LIST.VAR3_1',
+        term,
+        institution: 'UOG',
+      },
     });
   });
 
@@ -113,7 +117,7 @@ describe('UOG Search Fetcher', () => {
     expect(result).toHaveLength(1);
     expect(result).toContainEqual({
       code: 'VAR1,VAR3',
-      course: { code: 'VAR1,VAR3' },
+      course: { code: 'VAR1,VAR3', term, institution: 'UOG' },
     });
   });
 
@@ -170,7 +174,10 @@ describe('UOG Search Fetcher', () => {
     );
 
     const expectResults = (...x) =>
-      x.map(x => ({ code: `${x}`, course: { code: `${x}` } }));
+      x.map(x => ({
+        code: `${x}`,
+        course: { code: `${x}`, term, institution: 'UOG' },
+      }));
 
     expect(skippedResults).toEqual(expectResults(2, 3, 4, 5));
     expect(limitedResults).toEqual(expectResults(1, 2, 3));

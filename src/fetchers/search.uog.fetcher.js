@@ -37,7 +37,7 @@ module.exports = async (query, term, skip = 0, limit = 0, { rp: request }) => {
     results.reduce((obj, course) => {
       obj[course.code] = obj[course.code] || {
         code: course.code,
-        course,
+        course: { ...course, term, institution: 'UOG' },
       };
       return obj;
     }, {}),

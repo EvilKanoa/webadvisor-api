@@ -18,5 +18,7 @@ module.exports = async (code, term, { rp: request }) => {
     },
   });
 
-  return parseXMLCourse(xml);
+  const course = parseXMLCourse(xml);
+
+  return course ? { ...course, code, term, institution: 'WLU' } : undefined;
 };

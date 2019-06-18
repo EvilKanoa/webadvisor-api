@@ -10,7 +10,7 @@ module.exports = async (root, { code, institution, term }, context) => {
   try {
     const resolver = institutions[institution];
     const course = resolver && (await resolver(code, term, context));
-    return course && { ...course, term, institution };
+    return course || undefined;
   } catch (e) {
     if (env !== 'production') {
       console.error(e);

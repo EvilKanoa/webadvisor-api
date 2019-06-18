@@ -17,6 +17,7 @@ const parseDescription = (html, code) => {
     ? dom('tbody > tr.description > td', node)
         .text()
         .replace(/[\s]+/gm, ' ')
+        .trim()
     : '';
 };
 
