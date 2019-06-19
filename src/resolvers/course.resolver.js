@@ -12,11 +12,9 @@ module.exports = async (root, { code, institution, term }, context) => {
     const course = resolver && (await resolver(code, term, context));
     return course || undefined;
   } catch (e) {
-    if (env !== 'production') {
-      console.error(e);
-      throw e;
-    } else {
-      throw Error('Internal resolve error encountered');
-    }
+    console.error(e);
+    throw env === 'production'
+      ? Error('Internal resolve error encountered')
+      : e;
   }
 };
