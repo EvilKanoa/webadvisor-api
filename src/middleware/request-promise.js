@@ -1,8 +1,8 @@
 const rp = require('request-promise-native');
 
-module.exports = defaults => (req, res, next) => {
+module.exports = getDefaults => (req, res, next) => {
   if (!req.rp) {
-    req.rp = rp.defaults(defaults);
+    req.rp = rp.defaults(getDefaults(req));
   }
   return next();
 };
