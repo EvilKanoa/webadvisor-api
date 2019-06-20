@@ -1,3 +1,5 @@
+const request = require('request');
+
 const app = require('express')();
 
 const errorHandler = err => console.error('Uncaught error', err);
@@ -8,10 +10,10 @@ process.on('uncaughtException', errorHandler);
 app.use(require('./middleware/cors'));
 app.use(require('body-parser').json());
 app.use(
-  require('./middleware/request-promise')({
-    jar: true,
+  require('./middleware/request-promise')(() => ({
+    jar: request.jar(),
     followAllRedirects: true,
-  }),
+  })),
 );
 app.options('*', require('./middleware/cors'));
 
