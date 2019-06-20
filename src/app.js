@@ -1,6 +1,8 @@
 const app = require('express')();
 
-process.on('unhandledRejection', err => console.error('Uncaught error', err));
+const errorHandler = err => console.error('Uncaught error', err);
+process.on('unhandledRejection', errorHandler);
+process.on('uncaughtException', errorHandler);
 
 // add middleware
 app.use(require('./middleware/cors'));
