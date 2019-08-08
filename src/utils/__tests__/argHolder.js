@@ -20,8 +20,8 @@ describe('StrickArgHolder', () => {
     const testObj = { key1: 'value1', key2: { key3: 'value2' } };
     const argHolder = new StrickArgHolder(testObj);
 
-    expect(argHolder.toObj()).toEqual(testObj);
-    expect(argHolder.toObj()).not.toBe(testObj);
+    expect(argHolder.getAll()).toEqual(testObj);
+    expect(argHolder.getAll()).not.toBe(testObj);
   });
 
   it('retrieves args without fallback', () => {

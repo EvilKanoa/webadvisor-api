@@ -8,6 +8,7 @@ const {
   GraphQLInt,
   GraphQLFloat,
 } = require('graphql');
+const calendarResolvers = require('./resolvers/calendar.resolver');
 
 const nonNullListOf = type => GraphQLNonNull(GraphQLList(GraphQLNonNull(type)));
 
@@ -353,16 +354,17 @@ const calendar = new GraphQLObjectType({
   fields: {
     institution: {
       type: GraphQLNonNull(institution),
-      description: 'The instiution which this calendar belongs to.',
+      description: 'The institution which this calendar belongs to.',
     },
     year: {
       type: GraphQLNonNull(GraphQLInt),
       description:
         'The year which this calendar represents, if calendar is given a two-year range, this number represents the year the calendar starts in.',
     },
-    // the following are 1:1 section mapping from the UoG calendar
+    // the following is a 1:1 section mapping from the UoG calendar
     disclaimer: {
       type: infoSection,
+      resolve: calendarResolvers.disclaimer,
       description: 'The "Disclaimer" section from the academic calendar.',
     },
     courses: {
@@ -380,6 +382,7 @@ const calendar = new GraphQLObjectType({
           },
         },
       }),
+      resolve: calendarResolvers.courseDescriptions,
       description:
         'The "Course Descriptions" section from the academic calendar.',
     },
@@ -439,7 +442,7 @@ const query = new GraphQLObjectType({
     },
     calendar: {
       type: calendar,
-      resolve: null,
+      resolve: calendarResolvers.calendar,
       args: {
         institution: {
           type: GraphQLNonNull(institution),

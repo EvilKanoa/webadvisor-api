@@ -7,6 +7,7 @@ process.on('unhandledRejection', errorHandler);
 process.on('uncaughtException', errorHandler);
 
 // add middleware
+app.use(require('./middleware/errors')());
 app.use(require('./middleware/cors'));
 app.use(require('body-parser').json());
 app.use(

@@ -3,7 +3,7 @@
 exports[`GraphQL schema matches the schema snapshot 1`] = `
 "\\"\\"\\"Information gathered from an institution's undergraduate calendar.\\"\\"\\"
 type Academic_Calendar {
-  \\"\\"\\"The instiution which this calendar belongs to.\\"\\"\\"
+  \\"\\"\\"The institution which this calendar belongs to.\\"\\"\\"
   institution: School!
 
   \\"\\"\\"

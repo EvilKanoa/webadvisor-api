@@ -22,14 +22,18 @@ describe('Request Promise Middleware', () => {
   it('adds the request library to the req object', () => {
     const req = {};
     const getDefaults = () => 'rp';
+
     middleware(getDefaults)(req, {}, jest.fn());
+
     expect(req.rp).toBe(getDefaults());
   });
 
   it("doesn't override a preexisting rp object", () => {
     const req = { rp: 'mine' };
     const getDefaults = () => 'rp';
+
     middleware(getDefaults)(req, {}, jest.fn());
+
     expect(req.rp).toEqual('mine');
   });
 });

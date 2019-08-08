@@ -7,7 +7,7 @@ class StrictArgHolder {
     return Object.keys(obj).map(key => [key, obj[key]]);
   }
 
-  toObj() {
+  getAll() {
     const obj = Object.create(null);
     for (const [key, value] of this.args.entries()) {
       obj[key] = value;
