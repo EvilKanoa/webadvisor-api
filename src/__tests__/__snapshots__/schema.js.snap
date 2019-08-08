@@ -1,7 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GraphQL schema matches the schema snapshot 1`] = `
-"\\"\\"\\"A course which includes all metadata and sections.\\"\\"\\"
+"\\"\\"\\"Information gathered from an institution's undergraduate calendar.\\"\\"\\"
+type Academic_Calendar {
+  \\"\\"\\"The instiution which this calendar belongs to.\\"\\"\\"
+  institution: School!
+
+  \\"\\"\\"
+  The year which this calendar represents, if calendar is given a two-year
+  range, this number represents the year the calendar starts in.
+  \\"\\"\\"
+  year: Int!
+
+  \\"\\"\\"The \\"Disclaimer\\" section from the academic calendar.\\"\\"\\"
+  disclaimer: Info_Section
+
+  \\"\\"\\"The \\"Course Descriptions\\" section from the academic calendar.\\"\\"\\"
+  courses: Course_Descriptions
+}
+
+\\"\\"\\"A course which includes all metadata and sections.\\"\\"\\"
 type Course {
   \\"\\"\\"The course code, sometimes considered a course ID.\\"\\"\\"
   code: String!
@@ -34,6 +52,64 @@ type Course {
   sections: [Section]
 }
 
+\\"\\"\\"Course description and information for a single course.\\"\\"\\"
+type Course_Description {
+  \\"\\"\\"The full course code.\\"\\"\\"
+  code: String
+
+  \\"\\"\\"The title of the course.\\"\\"\\"
+  title: String
+
+  \\"\\"\\"List of semesters which this course is offered in.\\"\\"\\"
+  semesters: [Semester]
+
+  \\"\\"\\"The number of lecture hours expected every week.\\"\\"\\"
+  lectureHours: Int
+
+  \\"\\"\\"The number of lab hours expected every week.\\"\\"\\"
+  labHours: Int
+
+  \\"\\"\\"The credit weight of the course.\\"\\"\\"
+  credits: Float
+
+  \\"\\"\\"The description of the course itself.\\"\\"\\"
+  description: String
+
+  \\"\\"\\"Information on when and how the course is offered.\\"\\"\\"
+  offering: String
+
+  \\"\\"\\"Information on the required prerequisite(s) for the course.\\"\\"\\"
+  prerequisite: String
+
+  \\"\\"\\"Information on the restriction(s) that apply for the course.\\"\\"\\"
+  restriction: String
+
+  \\"\\"\\"The department(s) offering this course.\\"\\"\\"
+  department: String
+}
+
+type Course_Description_Section {
+  \\"\\"\\"The title of the department.\\"\\"\\"
+  title: String
+
+  \\"\\"\\"The prefix for course codes within this section.\\"\\"\\"
+  code: String
+
+  \\"\\"\\"Extra information covering the whole section.\\"\\"\\"
+  details: String
+
+  \\"\\"\\"All current courses listed by this department.\\"\\"\\"
+  courses: [Course_Description]
+}
+
+type Course_Descriptions {
+  \\"\\"\\"General information pertaining to all course descriptions.\\"\\"\\"
+  description: [Info_Section]
+
+  \\"\\"\\"Each individual department offering courses.\\"\\"\\"
+  sections: [Course_Description_Section]
+}
+
 \\"\\"\\"One of the seven days in a week.\\"\\"\\"
 enum Day {
   \\"\\"\\"Monday\\"\\"\\"
@@ -56,6 +132,15 @@ enum Day {
 
   \\"\\"\\"Sunday\\"\\"\\"
   sunday
+}
+
+\\"\\"\\"A title and description representing one info section.\\"\\"\\"
+type Info_Section {
+  \\"\\"\\"The title of this info section.\\"\\"\\"
+  title: String
+
+  \\"\\"\\"The content of this info section.\\"\\"\\"
+  description: String
 }
 
 \\"\\"\\"
@@ -148,6 +233,13 @@ type Query {
     \\"\\"\\"
     limit: Int
   ): Search
+  calendar(
+    \\"\\"\\"The institution to get the academic calendar for.\\"\\"\\"
+    institution: School!
+
+    \\"\\"\\"The year to get the calendar for.\\"\\"\\"
+    year: Int!
+  ): Academic_Calendar
 }
 
 \\"\\"\\"An entity matched during a search.\\"\\"\\"
@@ -208,6 +300,20 @@ type Section {
 
   \\"\\"\\"The meetings required for the section.\\"\\"\\"
   meetings: [Meeting!]
+}
+
+\\"\\"\\"
+A single semester of the year. Generally is used in tandem with a year to represent a term.
+\\"\\"\\"
+enum Semester {
+  \\"\\"\\"Fall Semester\\"\\"\\"
+  F
+
+  \\"\\"\\"Winter Semester\\"\\"\\"
+  W
+
+  \\"\\"\\"Summer Semester\\"\\"\\"
+  S
 }
 
 \\"\\"\\"

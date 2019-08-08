@@ -12,6 +12,7 @@ module.exports = async (
   context,
 ) => {
   query = query.toLowerCase();
+  context.args.put({ query, term, institution });
   try {
     const resolver = institutions[institution];
     const results =

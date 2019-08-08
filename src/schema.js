@@ -287,7 +287,18 @@ const courseDescription = new GraphQLObjectType({
       type: GraphQLList(semester),
       description: 'List of semesters which this course is offered in.',
     },
-    // (3-0) / (3-1) thing
+    lectureHours: {
+      type: GraphQLInt,
+      description: 'The number of lecture hours expected every week.',
+    },
+    labHours: {
+      type: GraphQLInt,
+      description: 'The number of lab hours expected every week.',
+    },
+    credits: {
+      type: GraphQLFloat,
+      description: 'The credit weight of the course.',
+    },
     description: {
       type: GraphQLString,
       description: 'The description of the course itself.',
