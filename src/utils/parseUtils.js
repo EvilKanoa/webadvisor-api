@@ -3,7 +3,7 @@ const xray = require('x-ray');
 const filters = {
   trim: v => (typeof v === 'string' ? v.trim() : v),
   cleanSpaces: v => (typeof v === 'string' ? v.replace(/\s+/g, ' ') : v),
-  removeNewlines: v => (typeof v === 'string' ? v.replace('\n', '') : v),
+  removeNewlines: v => (typeof v === 'string' ? v.replace(/\n/g, '') : v),
 };
 
 const promisify = xray =>

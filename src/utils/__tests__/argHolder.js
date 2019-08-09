@@ -1,10 +1,10 @@
-const StrickArgHolder = require('../argHolder');
+const StrictArgHolder = require('../argHolder');
 
-describe('StrickArgHolder', () => {
+describe('StrictArgHolder', () => {
   it('applies initial args', () => {
-    const emptyArgHolder = new StrickArgHolder();
-    const smallArgHolder = new StrickArgHolder({});
-    const largeArgHolder = new StrickArgHolder({
+    const emptyArgHolder = new StrictArgHolder();
+    const smallArgHolder = new StrictArgHolder({});
+    const largeArgHolder = new StrictArgHolder({
       key1: 'value1',
       key2: { key3: 'value2' },
     });
@@ -18,7 +18,7 @@ describe('StrickArgHolder', () => {
 
   it('generates object of args', () => {
     const testObj = { key1: 'value1', key2: { key3: 'value2' } };
-    const argHolder = new StrickArgHolder(testObj);
+    const argHolder = new StrictArgHolder(testObj);
 
     expect(argHolder.getAll()).toEqual(testObj);
     expect(argHolder.getAll()).not.toBe(testObj);
@@ -26,7 +26,7 @@ describe('StrickArgHolder', () => {
 
   it('retrieves args without fallback', () => {
     const testValue = 'value1';
-    const argHolder = new StrickArgHolder({ key1: testValue });
+    const argHolder = new StrictArgHolder({ key1: testValue });
 
     expect(argHolder.get('key1')).toBe(testValue);
     expect(argHolder.get('key2')).toBeUndefined();
@@ -35,7 +35,7 @@ describe('StrickArgHolder', () => {
   it('retrieves args with fallback', () => {
     const testValue = 'value1';
     const testFallback = 'fallback';
-    const argHolder = new StrickArgHolder({ key1: testValue });
+    const argHolder = new StrictArgHolder({ key1: testValue });
 
     expect(argHolder.get('key1', testFallback)).toBe(testValue);
     expect(argHolder.get('key2', testFallback)).toBe(testFallback);
@@ -43,7 +43,7 @@ describe('StrickArgHolder', () => {
 
   it('inserts new args into holder', () => {
     const testValue = 'value1';
-    const argHolder = new StrickArgHolder({ key2: 'value2' });
+    const argHolder = new StrictArgHolder({ key2: 'value2' });
     const putResult = argHolder.putArg('key1', testValue);
 
     expect(putResult).toBeTruthy();
@@ -53,7 +53,7 @@ describe('StrickArgHolder', () => {
   it('does not insert preexisting args', () => {
     const testValue1 = 'value1';
     const testValue2 = 'value2';
-    const argHolder = new StrickArgHolder({ key1: testValue1 });
+    const argHolder = new StrictArgHolder({ key1: testValue1 });
     const putResult = argHolder.putArg('key1', testValue2);
 
     expect(putResult).toBeFalsy();
@@ -64,7 +64,7 @@ describe('StrickArgHolder', () => {
     const testValue1 = 'value1';
     const testValue2 = 'value2';
     const testValue3 = 'value3';
-    const argHolder = new StrickArgHolder({ key1: testValue1 });
+    const argHolder = new StrictArgHolder({ key1: testValue1 });
     const putResult1 = argHolder.put({ key1: testValue2, key2: testValue3 });
     const putResult2 = argHolder.put({ newKey: false });
 
@@ -77,7 +77,7 @@ describe('StrickArgHolder', () => {
 
   it('checks if args are present', () => {
     const testValue = 'value1';
-    const argHolder = new StrickArgHolder({ key1: testValue });
+    const argHolder = new StrictArgHolder({ key1: testValue });
 
     expect(argHolder.contains('key1')).toBeTruthy();
     expect(argHolder.contains('key2')).toBeFalsy();
