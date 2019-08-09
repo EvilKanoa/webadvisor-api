@@ -8,29 +8,42 @@ const fetchers = {
     WLU: () => {},
   },
   courseDescriptions: {
-    UOG: () => {},
+    UOG: uogFetchers.courseDescriptions,
+    UW: () => {},
+    WLU: () => {},
+  },
+  courseDescriptionSection: {
+    UOG: uogFetchers.courseDescriptionSection,
     UW: () => {},
     WLU: () => {},
   },
 };
 
 module.exports = {
-  calendar: (root, { institution, year }, context) =>
+  calendar: (_root, { institution, year }, context) =>
     context.catchResolverErrors(async () => {
-      context.args.put({ institution, year });
+      const calendarYear = toCalendarYear(year);
+      context.args.put({ institution, year: calendarYear });
 
-      return { institution, year: toCalendarYear(year) };
+      return { institution, year: calendarYear };
     }),
   disclaimer: ({ institution, year }, _args, context) =>
     context.catchResolverErrors(async () => {
-      const resolver = fetchers.disclaimer[institution];
-      const disclaimer = resolver && (await resolver(context, year));
+      const fetcher = fetchers.disclaimer[institution];
+      const disclaimer = fetcher && (await fetcher(context, year));
       return disclaimer || undefined;
     }),
   courseDescriptions: ({ institution, year }, _args, context) =>
     context.catchResolverErrors(async () => {
-      const resolver = fetchers.courseDescriptions[institution];
-      const description = resolver && (await resolver(context, year));
+      const fetcher = fetchers.courseDescriptions[institution];
+      const description = fetcher && (await fetcher(context, year));
       return description || undefined;
+    }),
+  courseDescriptionSection: ({ code }, _args, context) =>
+    context.catchResolverErrors(async () => {
+      const { institution, year } = context.args.getAll();
+      const fetcher = fetchers.courseDescriptionSection[institution];
+      const section = fetcher && (await fetcher(context, year, code));
+      return section || undefined;
     }),
 };

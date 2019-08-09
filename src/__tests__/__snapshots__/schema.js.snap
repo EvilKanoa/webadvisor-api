@@ -61,13 +61,13 @@ type Course_Description {
   semesters: [Semester]
 
   \\"\\"\\"The number of lecture hours expected every week.\\"\\"\\"
-  lectureHours: Int
+  lectureHours: String
 
   \\"\\"\\"The number of lab hours expected every week.\\"\\"\\"
-  labHours: Int
+  labHours: String
 
   \\"\\"\\"The credit weight of the course.\\"\\"\\"
-  credits: Float
+  credits: String
 
   \\"\\"\\"The description of the course itself.\\"\\"\\"
   description: String
@@ -77,6 +77,9 @@ type Course_Description {
 
   \\"\\"\\"Information on the required prerequisite(s) for the course.\\"\\"\\"
   prerequisite: String
+
+  \\"\\"\\"Information on courses which are equivalent to this one.\\"\\"\\"
+  equate: String
 
   \\"\\"\\"Information on the restriction(s) that apply for the course.\\"\\"\\"
   restriction: String
@@ -91,7 +94,10 @@ type Course_Description_Section {
 
   \\"\\"\\"The prefix for course codes within this section.\\"\\"\\"
   code: String
+  details: Course_Description_Section_Details
+}
 
+type Course_Description_Section_Details {
   \\"\\"\\"Extra information covering the whole section.\\"\\"\\"
   details: String
 
@@ -311,6 +317,11 @@ enum Semester {
 
   \\"\\"\\"Summer Semester\\"\\"\\"
   S
+  U
+  P1
+  P2
+  P3
+  P4
 }
 
 \\"\\"\\"

@@ -252,6 +252,11 @@ const semester = new GraphQLEnumType({
     F: { description: 'Fall Semester' },
     W: { description: 'Winter Semester' },
     S: { description: 'Summer Semester' },
+    U: {},
+    P1: {},
+    P2: {},
+    P3: {},
+    P4: {},
   },
 });
 
@@ -289,15 +294,15 @@ const courseDescription = new GraphQLObjectType({
       description: 'List of semesters which this course is offered in.',
     },
     lectureHours: {
-      type: GraphQLInt,
+      type: GraphQLString,
       description: 'The number of lecture hours expected every week.',
     },
     labHours: {
-      type: GraphQLInt,
+      type: GraphQLString,
       description: 'The number of lab hours expected every week.',
     },
     credits: {
-      type: GraphQLFloat,
+      type: GraphQLString,
       description: 'The credit weight of the course.',
     },
     description: {
@@ -312,6 +317,10 @@ const courseDescription = new GraphQLObjectType({
       type: GraphQLString,
       description:
         'Information on the required prerequisite(s) for the course.',
+    },
+    equate: {
+      type: GraphQLString,
+      description: 'Information on courses which are equivalent to this one.',
     },
     restriction: {
       type: GraphQLString,
@@ -337,12 +346,20 @@ const courseDescriptionSection = new GraphQLObjectType({
       description: 'The prefix for course codes within this section.',
     },
     details: {
-      type: GraphQLString,
-      description: 'Extra information covering the whole section.',
-    },
-    courses: {
-      type: GraphQLList(courseDescription),
-      description: 'All current courses listed by this department.',
+      type: new GraphQLObjectType({
+        name: 'Course_Description_Section_Details',
+        fields: {
+          details: {
+            type: GraphQLString,
+            description: 'Extra information covering the whole section.',
+          },
+          courses: {
+            type: GraphQLList(courseDescription),
+            description: 'All current courses listed by this department.',
+          },
+        },
+      }),
+      resolve: calendarResolvers.courseDescriptionSection,
     },
   },
 });

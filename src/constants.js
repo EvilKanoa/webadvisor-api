@@ -51,6 +51,10 @@ module.exports = {
     calendarUrls: {
       disclaimer:
         'https://www.uoguelph.ca/registrar/calendars/undergraduate/%s/disclaim/index.shtml',
+      courseDescriptions:
+        'https://www.uoguelph.ca/registrar/calendars/undergraduate/%s/c12/index.shtml',
+      courseDescriptionSection:
+        'https://www.uoguelph.ca/registrar/calendars/undergraduate/%s/c12/c12%s.shtml',
     },
     descriptionUrl:
       'https://www.uoguelph.ca/registrar/calendars/undergraduate/current/c12/c12{CODE}.shtml',
