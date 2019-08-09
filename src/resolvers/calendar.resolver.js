@@ -1,6 +1,9 @@
+const uogFetchers = require('../fetchers/calendar.uog.fetcher');
+const { toCalendarYear } = require('../utils/fetchUtils.uog');
+
 const fetchers = {
   disclaimer: {
-    UOG: () => {},
+    UOG: uogFetchers.disclaimer,
     UW: () => {},
     WLU: () => {},
   },
@@ -16,24 +19,18 @@ module.exports = {
     context.catchResolverErrors(async () => {
       context.args.put({ institution, year });
 
-      return { institution, year };
+      return { institution, year: toCalendarYear(year) };
     }),
-  disclaimer: (root, args, context) =>
+  disclaimer: ({ institution, year }, _args, context) =>
     context.catchResolverErrors(async () => {
-      const { institution, year } = context.args.getAll();
-
       const resolver = fetchers.disclaimer[institution];
-      const disclaimer =
-        resolver && (await resolver(institution, year, context));
+      const disclaimer = resolver && (await resolver(context, year));
       return disclaimer || undefined;
     }),
-  courseDescriptions: (root, args, context) =>
+  courseDescriptions: ({ institution, year }, _args, context) =>
     context.catchResolverErrors(async () => {
-      const { institution, year } = context.args.getAll();
-
       const resolver = fetchers.courseDescriptions[institution];
-      const description =
-        resolver && (await resolver(institution, year, context));
+      const description = resolver && (await resolver(context, year));
       return description || undefined;
     }),
 };

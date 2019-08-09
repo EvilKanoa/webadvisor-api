@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index Route displays the correct summary 1`] = `"Lightweight and simple GraphQL API for UoG, UW, and WLU."`;
+exports[`index.route displays the correct summary 1`] = `"Lightweight and simple GraphQL API for UoG, UW, and WLU."`;

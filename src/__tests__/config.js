@@ -1,4 +1,4 @@
-describe('Configuration controls', () => {
+describe('config.js', () => {
   let env;
 
   beforeAll(() => {

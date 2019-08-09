@@ -9,7 +9,7 @@ const fetcher = require('../course.wlu.fetcher');
 jest.mock('../../parsers/course.wlu.parser');
 jest.mock('../../utils/fetchUtils.wlu');
 
-describe('WLU Course Fetcher', () => {
+describe('course.wlu.fetcher', () => {
   const code = 'TEST-100';
   const term = 'F19';
   const req = { rp: jest.fn() };

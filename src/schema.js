@@ -357,9 +357,8 @@ const calendar = new GraphQLObjectType({
       description: 'The institution which this calendar belongs to.',
     },
     year: {
-      type: GraphQLNonNull(GraphQLInt),
-      description:
-        'The year which this calendar represents, if calendar is given a two-year range, this number represents the year the calendar starts in.',
+      type: GraphQLNonNull(GraphQLString),
+      description: 'The year which this calendar represents.',
     },
     // the following is a 1:1 section mapping from the UoG calendar
     disclaimer: {
@@ -449,8 +448,9 @@ const query = new GraphQLObjectType({
           description: 'The institution to get the academic calendar for.',
         },
         year: {
-          type: GraphQLNonNull(GraphQLInt),
-          description: 'The year to get the calendar for.',
+          type: GraphQLInt,
+          description:
+            'The year to get the calendar for, defaults to current year.',
         },
       },
     },

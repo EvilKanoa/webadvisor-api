@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UOG Course Parser parses a empty search correctly 1`] = `"[]"`;
+exports[`course.uog.parser parses a empty search correctly 1`] = `"[]"`;
 
-exports[`UOG Course Parser parses a large course search correctly 1`] = `
+exports[`course.uog.parser parses a large course search correctly 1`] = `
 "[ { code: 'ACCT*1220',
     credits: '0.50',
     level: 'Undergraduate',
@@ -6846,7 +6846,7 @@ exports[`UOG Course Parser parses a large course search correctly 1`] = `
          status: 'Open' } ] } ]"
 `;
 
-exports[`UOG Course Parser parses a single course search correctly 1`] = `
+exports[`course.uog.parser parses a single course search correctly 1`] = `
 "[ { code: 'ANSC*6010',
     credits: '0.50',
     level: 'Graduate',
@@ -6866,7 +6866,7 @@ exports[`UOG Course Parser parses a single course search correctly 1`] = `
          status: 'Open' } ] } ]"
 `;
 
-exports[`UOG Course Parser parses a small course search correctly 1`] = `
+exports[`course.uog.parser parses a small course search correctly 1`] = `
 "[ { code: 'BINF*6410',
     credits: '0.50',
     level: 'Graduate',

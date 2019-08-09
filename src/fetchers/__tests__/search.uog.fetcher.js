@@ -5,7 +5,7 @@ const fetcher = require('../search.uog.fetcher');
 jest.mock('../../parsers/course.uog.parser');
 jest.mock('../../utils/fetchUtils.uog');
 
-describe('UOG Search Fetcher', () => {
+describe('search.uog.fetcher', () => {
   const queryCode = 'TEST*1000';
   const queryKeyword = 'name';
   const queryString = 'a query string';

@@ -3,7 +3,7 @@ const util = require('util');
 const readFile = util.promisify(require('fs').readFile);
 const { parseXMLCourse } = require('../course.wlu.parser');
 
-describe('WLU Course Parser', () => {
+describe('course.wlu.parser', () => {
   it('handles empty inputs', async () => {
     expect(await parseXMLCourse('')).toBeFalsy();
     expect(await parseXMLCourse(null)).toBeFalsy();

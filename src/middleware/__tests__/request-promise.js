@@ -5,7 +5,7 @@ jest.mock('request-promise-native', () => ({
   defaults: jest.fn(x => x),
 }));
 
-describe('Request Promise Middleware', () => {
+describe('request-promise middleware', () => {
   it('calls next in the chain', () => {
     const nextMock = jest.fn();
     const defaultsMock = {};

@@ -48,6 +48,10 @@ module.exports = {
       'VAR9': '',
       'SUBMIT_OPTIONS': '',
     },
+    calendarUrls: {
+      disclaimer:
+        'https://www.uoguelph.ca/registrar/calendars/undergraduate/%s/disclaim/index.shtml',
+    },
     descriptionUrl:
       'https://www.uoguelph.ca/registrar/calendars/undergraduate/current/c12/c12{CODE}.shtml',
   },

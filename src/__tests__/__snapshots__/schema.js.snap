@@ -1,16 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GraphQL schema matches the schema snapshot 1`] = `
+exports[`schema.js matches the schema snapshot 1`] = `
 "\\"\\"\\"Information gathered from an institution's undergraduate calendar.\\"\\"\\"
 type Academic_Calendar {
   \\"\\"\\"The institution which this calendar belongs to.\\"\\"\\"
   institution: School!
 
-  \\"\\"\\"
-  The year which this calendar represents, if calendar is given a two-year
-  range, this number represents the year the calendar starts in.
-  \\"\\"\\"
-  year: Int!
+  \\"\\"\\"The year which this calendar represents.\\"\\"\\"
+  year: String!
 
   \\"\\"\\"The \\"Disclaimer\\" section from the academic calendar.\\"\\"\\"
   disclaimer: Info_Section
@@ -237,8 +234,8 @@ type Query {
     \\"\\"\\"The institution to get the academic calendar for.\\"\\"\\"
     institution: School!
 
-    \\"\\"\\"The year to get the calendar for.\\"\\"\\"
-    year: Int!
+    \\"\\"\\"The year to get the calendar for, defaults to current year.\\"\\"\\"
+    year: Int
   ): Academic_Calendar
 }
 

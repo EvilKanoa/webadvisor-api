@@ -1,6 +1,6 @@
 const { toWLUTerm, computeWLUTimestamp } = require('../fetchUtils.wlu');
 
-describe('WLU Fetch Utils', () => {
+describe('fetchUtils.wlu', () => {
   describe('toWLUTerm', () => {
     it.each([
       ['W19', '201901'],

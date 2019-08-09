@@ -36,4 +36,9 @@ const sendRequest = async (request, formData = {}, postOpts = {}) => {
   });
 };
 
-module.exports = { sendRequest, getCookie };
+const toCalendarYear = year => {
+  const parsed = parseInt(year, 10);
+  return parsed && parsed > 0 ? `${parsed}-${parsed + 1}` : 'current';
+};
+
+module.exports = { sendRequest, getCookie, toCalendarYear };
