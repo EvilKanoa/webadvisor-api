@@ -7,7 +7,7 @@ jest.mock('../graphql.route');
 jest.mock('../index.route');
 jest.mock('../courses.route');
 
-describe('Route Builder', () => {
+describe('route builder', () => {
   beforeEach(() => {
     graphqlRoute.mockReset();
     indexRoute.mockReset();

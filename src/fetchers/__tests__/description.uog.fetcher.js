@@ -4,7 +4,7 @@ const fetcher = require('../description.uog.fetcher');
 
 jest.mock('../../parsers/description.uog.parser');
 
-describe('UOG Description Fetcher', () => {
+describe('description.uog.parser', () => {
   const code = 'TEST*1000';
   const req = { rp: jest.fn() };
 

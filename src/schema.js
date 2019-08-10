@@ -8,6 +8,7 @@ const {
   GraphQLInt,
   GraphQLFloat,
 } = require('graphql');
+const calendarResolvers = require('./resolvers/calendar.resolver');
 
 const nonNullListOf = type => GraphQLNonNull(GraphQLList(GraphQLNonNull(type)));
 
@@ -243,6 +244,167 @@ const search = new GraphQLObjectType({
   },
 });
 
+const semester = new GraphQLEnumType({
+  name: 'Semester',
+  description:
+    'A single semester of the year. Generally is used in tandem with a year to represent a term.',
+  values: {
+    F: { description: 'Fall Semester' },
+    W: { description: 'Winter Semester' },
+    S: { description: 'Summer Semester' },
+    U: {},
+    P1: {},
+    P2: {},
+    P3: {},
+    P4: {},
+  },
+});
+
+const infoSection = new GraphQLObjectType({
+  name: 'Info_Section',
+  description: 'A title and description representing one info section.',
+  fields: {
+    title: {
+      type: GraphQLString,
+      description: 'The title of this info section.',
+    },
+    description: {
+      type: GraphQLString,
+      description: 'The content of this info section.',
+    },
+  },
+});
+
+const infoList = GraphQLList(infoSection);
+
+const courseDescription = new GraphQLObjectType({
+  name: 'Course_Description',
+  description: 'Course description and information for a single course.',
+  fields: {
+    code: {
+      type: courseCode,
+      description: 'The full course code.',
+    },
+    title: {
+      type: GraphQLString,
+      description: 'The title of the course.',
+    },
+    semesters: {
+      type: GraphQLList(semester),
+      description: 'List of semesters which this course is offered in.',
+    },
+    lectureHours: {
+      type: GraphQLString,
+      description: 'The number of lecture hours expected every week.',
+    },
+    labHours: {
+      type: GraphQLString,
+      description: 'The number of lab hours expected every week.',
+    },
+    credits: {
+      type: GraphQLString,
+      description: 'The credit weight of the course.',
+    },
+    description: {
+      type: GraphQLString,
+      description: 'The description of the course itself.',
+    },
+    offering: {
+      type: GraphQLString,
+      description: 'Information on when and how the course is offered.',
+    },
+    prerequisite: {
+      type: GraphQLString,
+      description:
+        'Information on the required prerequisite(s) for the course.',
+    },
+    equate: {
+      type: GraphQLString,
+      description: 'Information on courses which are equivalent to this one.',
+    },
+    restriction: {
+      type: GraphQLString,
+      description:
+        'Information on the restriction(s) that apply for the course.',
+    },
+    department: {
+      type: GraphQLString,
+      description: 'The department(s) offering this course.',
+    },
+  },
+});
+
+const courseDescriptionSection = new GraphQLObjectType({
+  name: 'Course_Description_Section',
+  fields: {
+    title: {
+      type: GraphQLString,
+      description: 'The title of the department.',
+    },
+    code: {
+      type: GraphQLString,
+      description: 'The prefix for course codes within this section.',
+    },
+    details: {
+      type: new GraphQLObjectType({
+        name: 'Course_Description_Section_Details',
+        fields: {
+          details: {
+            type: GraphQLString,
+            description: 'Extra information covering the whole section.',
+          },
+          courses: {
+            type: GraphQLList(courseDescription),
+            description: 'All current courses listed by this department.',
+          },
+        },
+      }),
+      resolve: calendarResolvers.courseDescriptionSection,
+    },
+  },
+});
+
+const calendar = new GraphQLObjectType({
+  name: 'Academic_Calendar',
+  description:
+    "Information gathered from an institution's undergraduate calendar.",
+  fields: {
+    institution: {
+      type: GraphQLNonNull(institution),
+      description: 'The institution which this calendar belongs to.',
+    },
+    year: {
+      type: GraphQLNonNull(GraphQLString),
+      description: 'The year which this calendar represents.',
+    },
+    // the following is a 1:1 section mapping from the UoG calendar
+    disclaimer: {
+      type: infoSection,
+      resolve: calendarResolvers.disclaimer,
+      description: 'The "Disclaimer" section from the academic calendar.',
+    },
+    courses: {
+      type: new GraphQLObjectType({
+        name: 'Course_Descriptions',
+        fields: {
+          description: {
+            type: infoList,
+            description:
+              'General information pertaining to all course descriptions.',
+          },
+          sections: {
+            type: GraphQLList(courseDescriptionSection),
+            description: 'Each individual department offering courses.',
+          },
+        },
+      }),
+      resolve: calendarResolvers.courseDescriptions,
+      description:
+        'The "Course Descriptions" section from the academic calendar.',
+    },
+  },
+});
+
 const query = new GraphQLObjectType({
   name: 'Query',
   description:
@@ -291,6 +453,21 @@ const query = new GraphQLObjectType({
           type: GraphQLInt,
           description:
             'Number of results to return before cutting off, used for pagination in conjuction with skip.',
+        },
+      },
+    },
+    calendar: {
+      type: calendar,
+      resolve: calendarResolvers.calendar,
+      args: {
+        institution: {
+          type: GraphQLNonNull(institution),
+          description: 'The institution to get the academic calendar for.',
+        },
+        year: {
+          type: GraphQLInt,
+          description:
+            'The year to get the calendar for, defaults to current year.',
         },
       },
     },

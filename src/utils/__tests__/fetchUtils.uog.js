@@ -1,7 +1,7 @@
 const { uog } = require('../../constants');
-const { sendRequest, getCookie } = require('../fetchUtils.uog');
+const { sendRequest, getCookie, toCalendarYear } = require('../fetchUtils.uog');
 
-describe('UoG Fetch Utils', () => {
+describe('fetchUtils.uog', () => {
   describe('getCookie', () => {
     const emptyCookie = 'COOKIE_KEY_1=';
     const fullCookie = 'COOKIE_KEY_2=COOKIE_VALUE';
@@ -119,6 +119,32 @@ describe('UoG Fetch Utils', () => {
       });
 
       return expect(sendRequest(badRequestMock)).rejects.toThrow(myError);
+    });
+  });
+
+  describe('toCalendarYear', () => {
+    it('defaults to current when year is undefined', () => {
+      expect(toCalendarYear(undefined)).toEqual('current');
+      expect(toCalendarYear(null)).toEqual('current');
+      expect(toCalendarYear()).toEqual('current');
+    });
+    it('defaults to current when year is not positive', () => {
+      expect(toCalendarYear(-1)).toEqual('current');
+      expect(toCalendarYear('-1')).toEqual('current');
+      expect(toCalendarYear(0)).toEqual('current');
+    });
+
+    it('falls back to current when year is not a number', () => {
+      expect(toCalendarYear('not a number')).toEqual('current');
+      expect(toCalendarYear(NaN)).toEqual('current');
+      expect(toCalendarYear({})).toEqual('current');
+      expect(toCalendarYear(true)).toEqual('current');
+    });
+
+    it('creates year range for a valid year', () => {
+      expect(toCalendarYear(2020)).toEqual('2020-2021');
+      expect(toCalendarYear('2020')).toEqual('2020-2021');
+      expect(toCalendarYear(1)).toEqual('1-2');
     });
   });
 });

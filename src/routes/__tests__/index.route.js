@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../../app');
 
-describe('Index Route', () => {
+describe('index.route', () => {
   it('displays the correct summary', async () => {
     const response = await request(app)
       .get('/')

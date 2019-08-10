@@ -5,7 +5,7 @@ jest.mock('request-promise-native', () => ({
   defaults: jest.fn(x => x),
 }));
 
-describe('Request Promise Middleware', () => {
+describe('request-promise middleware', () => {
   it('calls next in the chain', () => {
     const nextMock = jest.fn();
     const defaultsMock = {};
@@ -22,14 +22,18 @@ describe('Request Promise Middleware', () => {
   it('adds the request library to the req object', () => {
     const req = {};
     const getDefaults = () => 'rp';
+
     middleware(getDefaults)(req, {}, jest.fn());
+
     expect(req.rp).toBe(getDefaults());
   });
 
   it("doesn't override a preexisting rp object", () => {
     const req = { rp: 'mine' };
     const getDefaults = () => 'rp';
+
     middleware(getDefaults)(req, {}, jest.fn());
+
     expect(req.rp).toEqual('mine');
   });
 });

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WLU Course Search Parser parses a search with few results correctly 1`] = `"[ 'CP-102', 'CP-104', 'CP-164' ]"`;
+exports[`search.wlu.parser parses a search with few results correctly 1`] = `"[ 'CP-102', 'CP-104', 'CP-164' ]"`;
 
-exports[`WLU Course Search Parser parses a search with many results correctly 1`] = `
+exports[`search.wlu.parser parses a search with many results correctly 1`] = `
 "[ 'CP-102',
   'CP-104',
   'CP-164',

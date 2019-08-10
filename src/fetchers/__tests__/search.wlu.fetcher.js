@@ -5,7 +5,7 @@ const fetcher = require('../search.wlu.fetcher');
 
 jest.mock('../../parsers/search.wlu.parser');
 
-describe('WLU Search Fetcher', () => {
+describe('search.wlu.fetcher', () => {
   const query = 'a query string';
   const term = 'F19';
   const req = { rp: jest.fn() };

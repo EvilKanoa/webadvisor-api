@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WLU Course Parser parses a course with few sections correctly 1`] = `
+exports[`course.wlu.parser parses a course with few sections correctly 1`] = `
 "{ code: 'CP-386',
   credits: 0.5,
   description:
@@ -30,7 +30,7 @@ exports[`WLU Course Parser parses a course with few sections correctly 1`] = `
             type: 'LEC' } ] } ] }"
 `;
 
-exports[`WLU Course Parser parses a course with many sections correctly 1`] = `
+exports[`course.wlu.parser parses a course with many sections correctly 1`] = `
 "{ code: 'CP-104',
   credits: 0.5,
   description:
@@ -924,4 +924,4 @@ exports[`WLU Course Parser parses a course with many sections correctly 1`] = `
             type: 'LAB' } ] } ] }"
 `;
 
-exports[`WLU Course Parser parses a course with no sections correctly 1`] = `"false"`;
+exports[`course.wlu.parser parses a course with no sections correctly 1`] = `"false"`;

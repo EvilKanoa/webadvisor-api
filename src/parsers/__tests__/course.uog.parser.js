@@ -3,7 +3,7 @@ const util = require('util');
 const readFile = util.promisify(require('fs').readFile);
 const { parseCourses } = require('../course.uog.parser');
 
-describe('UOG Course Parser', () => {
+describe('course.uog.parser', () => {
   it('handles empty inputs', async () => {
     expect(await parseCourses('')).toEqual([]);
     expect(await parseCourses(null)).toEqual([]);
