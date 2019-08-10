@@ -33,6 +33,7 @@ const parseCourseDescriptionSection = html =>
         return {
           title: match.groups.title,
           code: match.groups.code,
+          rawTitle: title && title.length ? title : undefined,
           semesters: [
             ...new Set(
               (match.groups.semesters || '')

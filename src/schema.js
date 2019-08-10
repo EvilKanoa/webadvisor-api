@@ -289,6 +289,10 @@ const courseDescription = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The title of the course.',
     },
+    rawTitle: {
+      type: GraphQLString,
+      description: 'The original, unparsed, title from the course calendar.',
+    },
     semesters: {
       type: GraphQLList(semester),
       description: 'List of semesters which this course is offered in.',

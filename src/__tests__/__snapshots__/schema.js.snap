@@ -57,6 +57,9 @@ type Course_Description {
   \\"\\"\\"The title of the course.\\"\\"\\"
   title: String
 
+  \\"\\"\\"The original, unparsed, title from the course calendar.\\"\\"\\"
+  rawTitle: String
+
   \\"\\"\\"List of semesters which this course is offered in.\\"\\"\\"
   semesters: [Semester]
 
