@@ -188,6 +188,9 @@ enum Meeting_Type {
 
   \\"\\"\\"Seminar\\"\\"\\"
   SEM
+
+  \\"\\"\\"Exam\\"\\"\\"
+  EXAM
 }
 
 \\"\\"\\"
