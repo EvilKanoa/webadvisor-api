@@ -31,6 +31,7 @@ const meetingType = new GraphQLEnumType({
     LEC: { description: 'Lecture' },
     LAB: { description: 'Lab' },
     SEM: { description: 'Seminar' },
+    EXAM: { description: 'Exam' },
   },
 });
 
