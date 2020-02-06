@@ -57,6 +57,7 @@ const parseXMLCourse = xml => {
         .map((i, el) => {
           const data = cheerio(el);
 
+          const id = data.attr('cartid');
           const type = data.attr('type').toUpperCase();
           const name = data.attr('disp');
           const available = parseInt(data.attr('os'), 10);
@@ -69,22 +70,26 @@ const parseXMLCourse = xml => {
           return data
             .attr('timeblockids')
             .split(',')
-            .map(id => ({
+            .map(blockId => ({
+              id,
               type,
               name,
               available,
               capacity,
               location,
-              ...blocks[id],
+              ...blocks[blockId],
             }));
         })
         .get();
 
+      const id = [
+        ...new Set(
+          meetings.map(({ id, type }) => (type === 'LEC' ? id : `(${id})`)),
+        ),
+      ].join(' ');
+
       return {
-        id: data
-          .attr('key')
-          .split('_', 2)[1]
-          .slice(0, -1),
+        id,
         available:
           minAvailable === Number.MAX_SAFE_INTEGER ? undefined : minAvailable,
         capacity:

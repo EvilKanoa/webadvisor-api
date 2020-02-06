@@ -32,6 +32,7 @@ const meetingType = new GraphQLEnumType({
     LAB: { description: 'Lab' },
     SEM: { description: 'Seminar' },
     EXAM: { description: 'Exam' },
+    TUT: { description: 'Tutorial' },
   },
 });
 
@@ -101,6 +102,11 @@ const meeting = new GraphQLObjectType({
     name: {
       type: GraphQLString,
       description: 'The name of the meeting if one is given.',
+    },
+    id: {
+      type: GraphQLString,
+      description:
+        'The ID used to identify this meeting if one is given. Represents a meetings CRN when attached to a WLU meeting.',
     },
     day: { type: weekday, description: 'The day which the meeting occurs.' },
     start: {

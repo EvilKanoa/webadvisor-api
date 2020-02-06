@@ -159,6 +159,11 @@ type Meeting {
   \\"\\"\\"The name of the meeting if one is given.\\"\\"\\"
   name: String
 
+  \\"\\"\\"
+  The ID used to identify this meeting if one is given. Represents a meetings CRN when attached to a WLU meeting.
+  \\"\\"\\"
+  id: String
+
   \\"\\"\\"The day which the meeting occurs.\\"\\"\\"
   day: Day
 
@@ -191,6 +196,9 @@ enum Meeting_Type {
 
   \\"\\"\\"Exam\\"\\"\\"
   EXAM
+
+  \\"\\"\\"Tutorial\\"\\"\\"
+  TUT
 }
 
 \\"\\"\\"
