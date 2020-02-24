@@ -5,13 +5,6 @@ module.exports = {
     webadvisorCourseUrl:
       'https://webadvisor.uoguelph.ca/WebAdvisor/WebAdvisor?SS=1&APP=ST&CONSTITUENCY=WBST&TOKENIDX=',
     webadvisorCourseSearchData: {
-      'VAR10': 'Y',
-      'VAR11': 'Y',
-      'VAR12': 'Y',
-      'VAR13': 'Y',
-      'VAR14': 'Y',
-      'VAR15': 'Y',
-      'VAR16': 'Y',
       'DATE.VAR1': '',
       'DATE.VAR2': '',
       'LIST.VAR1_CONTROLLER': 'LIST.VAR1',
