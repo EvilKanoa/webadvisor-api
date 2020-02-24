@@ -22,6 +22,10 @@
   "bugs": {
     "url": "https://github.com/EvilKanoa/webadvisor-api/issues"
   },
+  "engines": {
+    "node": ">=10",
+    "yarn": ">=1.2"
+  },
   "homepage": "https://github.com/EvilKanoa/webadvisor-api#readme",
   "prettier": {
     "printWidth": 80,
